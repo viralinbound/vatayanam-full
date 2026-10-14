@@ -427,3 +427,16 @@ body{letter-spacing:.004em;line-height:1.7}
 .hd__r{gap:clamp(14px,2vw,26px)!important;align-items:center}
 @media(max-width:700px){.hd__t span{display:none}.hd__q{padding:0 18px!important;min-height:42px!important;font-size:14px!important}}
 #hq{scroll-margin-top:96px}
+
+/* ===== brochure update: quote band + series comparison table ===== */
+.qband{padding:clamp(56px,8vw,110px) 0;background:linear-gradient(135deg,#0B2A66,#02409A);color:#fff;text-align:center}
+.qband blockquote{margin:0 auto 18px;max-width:900px;font:300 clamp(30px,4.4vw,62px)/1.15 var(--serif);letter-spacing:.01em}
+.qband em{font-style:italic;color:#9CC8FF}.qband span{font:500 12.5px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:#C9D9F0}
+.cmp__t{overflow-x:auto;border-radius:22px;background:#fff;box-shadow:0 30px 60px -36px rgba(11,31,68,.42),0 0 0 1px rgba(11,31,68,.06)}
+.cmp table{width:100%;min-width:860px;border-collapse:collapse;font:400 14.5px/1.5 var(--sans);color:var(--ink)}
+.cmp th,.cmp td{text-align:left;padding:16px 18px;border-bottom:1px solid rgba(11,31,68,.08);vertical-align:top}
+.cmp thead th{font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:rgba(2,64,154,.05)}
+.cmp tbody th{font:500 19px var(--serif);color:#0B1F44;white-space:nowrap}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}.cmp tbody tr:hover{background:rgba(2,64,154,.03)}
+.cmp__n{margin-top:16px;font:400 13.5px/1.6 var(--sans);color:var(--ink);opacity:.85}
+.cc b{color:#0B1F44;font-weight:600}
