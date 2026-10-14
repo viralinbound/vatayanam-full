@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vatayanam-full.vercel.app/sitemap.xml
