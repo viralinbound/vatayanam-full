@@ -957,3 +957,7 @@ html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul 
 .sc__pf{display:none!important}
 .sc__tg button{padding:7px 10px}
 @media(max-width:700px){.sc__tg button{padding:6px 8px;font-size:10.5px}.hc .sc__img .sc__pr{padding:40px 12px 12px}}
+
+.hc .sc__img .sc__pr[data-fit="cover"]{object-fit:cover!important;padding:0!important;background:#09315B}
+.hc .sc__img .sc__pr[data-fit="contain"]{background:#fff;padding:22px 18px 20px}
+.hc .sc__img .sc__pr[data-fit="cover"],.hc .sc__img .sc__pr[data-fit="contain"]{object-fit:contain!important;padding:26px 16px 22px!important;background:radial-gradient(80% 80% at 50% 45%,#fff 0%,#F6F1E6 100%)!important}
