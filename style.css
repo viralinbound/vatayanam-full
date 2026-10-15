@@ -549,3 +549,16 @@ main .sec{padding-top:44px!important;padding-bottom:44px!important}
 .hc .sc__img .sc__dr[hidden]{display:none}
 .sc__img.is-dr .sc__pf{display:none}
 @media(max-width:700px){.sc__tg{left:8px;top:8px}.sc__tg button{padding:6px 10px;font-size:11px}.hc .sc__img .sc__dr{padding:46px 8px 8px}}
+
+/* full-screen section drawing viewer */
+.hc .sc__img .sc__dr{cursor:zoom-in}
+.dlb{position:fixed;inset:0;z-index:200;background:rgba(6,20,47,.94);display:flex;flex-direction:column}
+.dlb[hidden]{display:none}
+.dlb__x{position:absolute;right:14px;top:12px;z-index:3;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.12);color:#fff;font:300 32px/1 var(--sans);cursor:pointer}
+.dlb__s{flex:1;overflow:auto;display:grid;place-items:center;padding:70px 16px 54px;-webkit-overflow-scrolling:touch}
+.dlb__s img{background:#fff;border-radius:12px;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in;padding:12px}
+.dlb__s img.z{max-width:none;max-height:none;width:240%;cursor:zoom-out}
+.dlb__h{position:absolute;left:0;right:0;bottom:14px;margin:0;text-align:center;color:#C9D9F0;font:400 13px var(--sans);letter-spacing:.04em}
+@media(max-width:700px){.dlb__s img.z{width:420%}}
+
+.dlb__s img.z{width:min(2600px,240%)!important}
