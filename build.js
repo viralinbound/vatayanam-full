@@ -238,6 +238,7 @@ ${REVTHEME}
 <p class="hero__k">Slim System Aluminium windows, doors, balcony and facade systems. Bharat make, European engineering, from V-Tech Building Systems, Bengaluru.</p>
 <div class="hero__cta"><a class="btn btn--pill" href="#hq">Get Free Quote →</a><a class="btn btn--pill btn--g" href="${tel(P1)}" data-track="call">Call ${P1}</a></div>
 <ul class="bul"><li>11 series: sliding, casement, doors, balcony, facade</li><li>Slim profiles from 25mm, heights up to 4600mm</li><li>Made by V-Tech at its own Bengaluru works</li></ul></div>
+<figure class="hero__p"><img src="${A}sapphire-2x.webp" alt="Vatayanam aluminium windows and doors on a modern villa, photo from the Vatayanam brochure" width="1200" height="1000" fetchpriority="high"><figcaption><span><b>11</b> series</span><span>From <b>25mm</b> slim</span><span>Up to <b>4600mm</b></span></figcaption></figure>
 <form id="hq" class="lf lf--hero lf--card" data-lead novalidate><span class="lf__tag">FREE QUOTE</span><h2 class="lf__h">Request a Quote</h2><p class="lf__sub">Tell us what you need. V-Tech’s team will call you back.</p>
 <p class="lf__note">✦ Free site visit + measurement, no obligation</p>
 <div class="lf__r"><label>First name *<input name="name" autocomplete="given-name" placeholder="First name"></label><label>Last name<input name="last" autocomplete="family-name" placeholder="Last name"></label></div>

@@ -874,3 +874,21 @@ html body .hd:not(.s) .hd__t,html body .hd:not(.s) .hd__t b{color:#0B1F44!import
 html body .hd:not(.s) .hd__t small{color:#33415C!important;opacity:1}
 html body .hd:not(.s) .hd__t i{background:rgba(2,64,154,.1)!important;color:#02409A!important}
 }
+
+.hero__p{display:none}
+/* ===== desktop hero v5: three clean columns, nothing printed over the photo ===== */
+@media(min-width:1100px) and (orientation:landscape){
+html body .hero{background:radial-gradient(60% 80% at 62% 40%,rgba(120,180,235,.22),transparent 70%),linear-gradient(180deg,#F8FBFF 0%,#E8F1FA 100%)!important}
+html body .hero:before,html body .hero:after{display:none!important}
+html body .hero .hero__g{grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr) minmax(370px,.78fr)!important;gap:clamp(18px,1.8vw,30px)!important;align-items:stretch!important}
+html body .hero__l{align-self:center!important}
+html body .hero h1{font-size:clamp(34px,min(3.3vw,6vh),54px)!important}
+html body .hero__p{display:block;position:relative;margin:0;border-radius:30px;overflow:hidden;box-shadow:0 44px 80px -42px rgba(11,31,68,.6),0 0 0 1px rgba(11,31,68,.06);min-height:0}
+html body .hero__p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+html body .hero__p:hover img{transform:scale(1.04)}
+html body .hero__p figcaption{position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-wrap:wrap;gap:8px}
+html body .hero__p figcaption span{padding:8px 13px;border-radius:99px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font:500 12.5px var(--sans);color:#0B1F44;box-shadow:0 8px 20px -12px rgba(6,20,47,.5)}
+html body .hero__p figcaption b{color:#02409A;font-weight:700}
+}
+@media(min-width:1001px) and (max-width:1099px) and (orientation:landscape){.hero__p{display:none}}
+@media(min-width:1100px) and (orientation:landscape){html body .hero__p img{object-position:52% 78%!important}html body .hero__cta{grid-template-columns:auto auto!important;justify-content:start;gap:12px!important}}
