@@ -947,3 +947,5 @@ html body .hero__cta .btn{font-size:clamp(15px,2.2vh,17px)!important;min-height:
 html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul li{text-shadow:0 0 12px rgba(250,246,238,.95),0 0 24px rgba(250,246,238,.85)!important}
 }
 @media(max-width:700px){html body .hero h1{font-weight:600!important}html body .hero__k{font-weight:500!important;color:#0F1620!important}}
+
+.cprev{display:none!important}
