@@ -809,6 +809,29 @@ html body .abt h2{font-size:clamp(30px,4.4vw,38px)!important}
 .cmp tbody th{font-size:17px!important;white-space:normal!important}
 }
 
+/* round 2 of dead-space removal: sections sit close together at every screen size */
+html body main .sec{padding-top:clamp(20px,2.4vw,32px)!important;padding-bottom:clamp(20px,2.4vw,32px)!important}
+html body .hs{padding:clamp(20px,2.4vw,32px) 0 clamp(10px,1.4vw,18px)!important}
+html body .bph{padding:clamp(26px,3vw,40px) 0 clamp(26px,3vw,40px)!important}
+html body .qband{padding:clamp(30px,3.6vw,48px) 0!important}
+html body .gr{padding-top:clamp(18px,2.2vw,30px)!important;padding-bottom:clamp(14px,1.8vw,24px)!important}
+html body .final{padding-top:clamp(26px,3vw,40px)!important;padding-bottom:clamp(26px,3vw,40px)!important}
+html body .band{padding:0!important}
+html body .band .wrap{padding-top:clamp(14px,1.6vw,22px)!important;padding-bottom:clamp(14px,1.6vw,22px)!important}
+html body .foot{padding-top:clamp(14px,1.6vw,20px)!important}
+html body .hero{margin-bottom:0!important}
+html body .proofbar{margin:0!important}
+html body .hs__head{margin-bottom:clamp(10px,1.4vw,16px)!important}
+html body .hs__track{padding-bottom:clamp(14px,1.6vw,22px)!important}
+@media(max-width:700px){
+html body main .sec{padding-top:22px!important;padding-bottom:22px!important}
+html body .hs{padding:22px 0 8px!important}
+html body .bph{padding:22px 0 24px!important}
+html body .qband{padding:28px 0!important}
+html body .final{padding-top:26px!important;padding-bottom:26px!important}
+}
+@media(min-width:701px){html body .abt{align-items:stretch!important}html body .abt__i{align-self:stretch;display:flex}html body .abt__i img{width:100%;height:100%!important;min-height:320px;object-fit:cover}}
+
 /* main-site typography */
 /* Google reviews section: interactive carousel + quick enquiry. All classes prefixed gr- to avoid collisions. */
 .gr{position:relative;padding:clamp(64px,9vw,110px) 0;background:radial-gradient(900px 420px at 100% 0%,#E6EEF8,transparent 60%),radial-gradient(800px 480px at 0% 100%,#EEF3FA,transparent 60%),#F4F8FD;color:#012A63;overflow:hidden}
