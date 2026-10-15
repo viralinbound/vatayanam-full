@@ -619,3 +619,13 @@ html body .hero .bul{gap:clamp(6px,1.2vh,10px)!important;font-size:clamp(14px,2v
 @media(min-width:1001px) and (max-height:740px){html body .hero .bul{display:none!important}}
 
 @media(min-width:1001px){html body #hq label:has(select[name=product]),html body #hq label:has(select[name=qty]){grid-column:span 1}}
+
+/* compare table: hover a row to preview its section drawing */
+.cmp tbody tr{cursor:pointer;transition:background .2s}
+.cmp tbody tr:hover,.cmp tbody tr:focus-visible{background:rgba(2,64,154,.06)!important;outline:none}
+.cmp__tip{margin:12px 0 0;font:600 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.cprev{position:fixed;left:0;top:0;z-index:150;width:min(420px,34vw);padding:12px 12px 10px;border-radius:18px;background:#fff;box-shadow:0 30px 70px -20px rgba(6,20,47,.55),0 0 0 1px rgba(11,31,68,.1);pointer-events:none;opacity:0;transition:opacity .18s;will-change:transform}
+.cprev.on{opacity:1}
+.cprev img{display:block;width:100%;max-height:300px;object-fit:contain;background:#fff}
+.cprev span{display:block;margin-top:6px;text-align:center;font:500 18px var(--serif);color:#0B1F44}
+@media(hover:none),(max-width:700px){.cprev{display:none}.cmp__tip{display:none}}
