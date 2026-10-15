@@ -664,3 +664,8 @@ html body .dlb__s img.z{max-width:none!important;max-height:none!important}
 .cmp__a:active{background:var(--blue);color:#fff}
 .cmp__a[disabled]{opacity:.35}
 }
+/* phones: the expanded drawing shows complete, fitted to the card (no sideways scroll) */
+@media(max-width:700px){
+html body .cmp tbody tr.cmp__r.is-open .cmp__d{overflow:visible!important}
+html body .cmp__d img{width:100%!important;min-width:0!important;height:auto!important;max-height:none!important;object-fit:contain!important;padding:8px;box-sizing:border-box}
+}
