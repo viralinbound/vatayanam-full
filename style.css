@@ -523,9 +523,9 @@ main .sec{padding-top:44px!important;padding-bottom:44px!important}
 .cmp tbody{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -18px;padding:6px 18px 18px;scrollbar-width:none}
 .cmp tbody::-webkit-scrollbar{display:none}
 .cmp tbody tr{flex:0 0 84%;scroll-snap-align:center;align-content:start}
-.cmp__n:before{content:"Swipe to compare all 10 series \2192";display:block;font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.cmp__n:before{content:"Swipe to compare all 11 series \2192";display:block;font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
 }
-@media(max-width:700px){.cmp__n:before{content:none!important}.cmp__t:before{content:"Swipe to compare all 10 series \2192";display:block;font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 6px}}
+@media(max-width:700px){.cmp__n:before{content:none!important}.cmp__t:before{content:"Swipe to compare all 11 series \2192";display:block;font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 6px}}
 
 @media(max-width:700px){.abt .seo:nth-of-type(3){display:none}.hc p{font-size:14.5px!important}.hc ul{font-size:14px!important;gap:7px!important}}
 
@@ -655,3 +655,12 @@ html body .dlb__s img.z{max-width:none!important;max-height:none!important}
 .cmp tbody tr.cmp__r th{display:flex;align-items:center}
 }
 @media(max-width:700px){.cmp tbody tr.cmp__r.is-open .cmp__d{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.cmp__d img{width:auto!important;min-width:600px;height:220px!important;max-height:none!important;object-fit:contain}}
+
+/* arrows for the swipe cards (phones only) */
+.cmp__ar{display:none}
+@media(max-width:700px){
+.cmp__ar{display:flex;gap:10px;justify-content:flex-end;margin:-6px 0 10px}
+.cmp__a{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid rgba(2,64,154,.35);background:#fff;color:var(--blue);font:300 22px var(--sans);cursor:pointer;box-shadow:0 10px 24px -14px rgba(11,31,68,.45);transition:background .2s,color .2s,opacity .2s}
+.cmp__a:active{background:var(--blue);color:#fff}
+.cmp__a[disabled]{opacity:.35}
+}
