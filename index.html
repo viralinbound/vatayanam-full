@@ -905,6 +905,19 @@ html body .hero__p figcaption b{color:#02409A;font-weight:700}
 @media(min-width:1001px) and (max-width:1099px) and (orientation:landscape){.hero__p{display:none}}
 @media(min-width:1100px) and (orientation:landscape){html body .hero__p img{object-position:52% 78%!important}html body .hero__cta{grid-template-columns:auto auto!important;justify-content:start;gap:12px!important}}
 
+/* ===== desktop hero v6: the photo is back as the full banner (original dusk villa), light airy fade, clear navy type ===== */
+@media(min-width:1001px) and (orientation:landscape){
+html body .hero__p{display:none!important}
+html body .hero{background:linear-gradient(98deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.8) 16%,rgba(255,255,255,.5) 30%,rgba(255,255,255,.16) 44%,rgba(255,255,255,0) 56%),linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 20%),url(img2/hero-2x.webp) 62% center/cover no-repeat!important}
+html body .hero:before,html body .hero:after{display:none!important}
+html body .hero .hero__g{grid-template-columns:minmax(0,1fr) minmax(380px,.62fr)!important;align-items:center!important}
+html body .hero__l{align-self:center!important}
+html body .hero h1{font-size:clamp(36px,min(4vw,6.4vh),58px)!important;text-shadow:0 0 18px rgba(255,255,255,.9),0 0 34px rgba(255,255,255,.7)!important}
+html body .hero h1 .h1b{text-shadow:0 0 18px rgba(255,255,255,.9),0 0 34px rgba(255,255,255,.7)!important}
+html body .hero__k,html body .hero .lab,html body .hero .bul li{text-shadow:0 0 14px rgba(255,255,255,.95),0 0 26px rgba(255,255,255,.75)!important}
+html body .hero__cta{grid-template-columns:auto auto!important;justify-content:start}
+}
+
 /* main-site typography */
 /* Google reviews section: interactive carousel + quick enquiry. All classes prefixed gr- to avoid collisions. */
 .gr{position:relative;padding:clamp(64px,9vw,110px) 0;background:radial-gradient(900px 420px at 100% 0%,#E6EEF8,transparent 60%),radial-gradient(800px 480px at 0% 100%,#EEF3FA,transparent 60%),#F4F8FD;color:#012A63;overflow:hidden}
