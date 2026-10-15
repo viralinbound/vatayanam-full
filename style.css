@@ -629,3 +629,8 @@ html body .hero .bul{gap:clamp(6px,1.2vh,10px)!important;font-size:clamp(14px,2v
 .cprev img{display:block;width:100%;max-height:300px;object-fit:contain;background:#fff}
 .cprev span{display:block;margin-top:6px;text-align:center;font:500 18px var(--serif);color:#0B1F44}
 @media(hover:none),(max-width:700px){.cprev{display:none}.cmp__tip{display:none}}
+/* drawing viewer: fully opaque, nothing from the page shows through */
+html body .dlb{background:#06142F!important;backdrop-filter:none!important}
+html body .dlb__s{padding:64px 20px 52px!important}
+html body .dlb__s img{max-height:calc(100vh - 116px)!important;max-width:calc(100vw - 40px)!important}
+html body .dlb__s img.z{max-width:none!important;max-height:none!important}
