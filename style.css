@@ -696,3 +696,8 @@ html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul{
 html body .hero h1 .h1b{text-shadow:0 0 14px rgba(255,255,255,.95),0 0 28px rgba(255,255,255,.85)}
 html body .hero__k{font-weight:500;color:#13264d!important}
 }
+
+/* a light touch of white on the left (between the two earlier versions) */
+@media(min-width:1001px){
+html body .hero{background:linear-gradient(98deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.7) 14%,rgba(255,255,255,.4) 28%,rgba(255,255,255,.14) 42%,rgba(255,255,255,0) 54%),linear-gradient(180deg,rgba(255,255,255,.3) 0%,rgba(255,255,255,0) 18%),url(img2/hero-2x.webp) 60% center/cover no-repeat!important}
+}
