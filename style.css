@@ -831,3 +831,27 @@ html body .hero .lab{color:#02409A!important}
 html body .hero .bul li{color:#1C2B49!important}
 html body .hero__cta .btn--g,html body .hero__cta .btn[href^="tel"]{background:#fff!important;color:#02409A!important;border:1px solid rgba(2,64,154,.35)!important;box-shadow:0 12px 26px -16px rgba(6,20,47,.5)!important}
 }
+
+/* ===== desktop hero v3: deep-navy fade on the left with white type (premium, high contrast); photo stays vivid on the right ===== */
+@media(min-width:1001px) and (orientation:landscape){
+html body .hero{background:linear-gradient(90deg,rgba(5,18,44,.93) 0%,rgba(5,18,44,.84) 24%,rgba(5,18,44,.5) 46%,rgba(5,18,44,.12) 64%,rgba(5,18,44,0) 74%),linear-gradient(180deg,rgba(5,18,44,.5) 0%,rgba(5,18,44,0) 24%),url(img2/hero-2x.webp) 62% center/cover no-repeat!important}
+html body .hero__l{background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important;padding:0!important;border-radius:0!important;width:100%!important;max-width:none!important}
+html body .hero h1{color:#fff!important;text-shadow:0 2px 24px rgba(0,0,0,.35)!important}
+html body .hero h1 .h1b{color:#8EC2FF!important}
+html body .hero__k{color:#E3ECF9!important;font-weight:400!important;text-shadow:none!important}
+html body .hero .lab{color:#9CCBFF!important}
+html body .hero .lab:before{background:#9CCBFF!important}
+html body .hero .bul li{color:#E3ECF9!important;text-shadow:none!important}
+html body .hero .bul li:before{background:rgba(255,255,255,.16)!important;color:#fff!important}
+html body .hero__cta .btn:not(.btn--g):not([href^="tel"]){background:linear-gradient(135deg,#1A6FE0,#0A4CB3)!important;color:#fff!important;box-shadow:0 18px 36px -14px rgba(26,111,224,.8)!important}
+html body .hero__cta .btn--g,html body .hero__cta .btn[href^="tel"]{background:rgba(255,255,255,.12)!important;color:#fff!important;border:1px solid rgba(255,255,255,.55)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:none!important}
+html body .hero__cta .btn--g:hover,html body .hero__cta .btn[href^="tel"]:hover{background:#fff!important;color:#02409A!important}
+/* header over the dark photo */
+html body .hd:not(.s) .logo,html body .hd:not(.s) .logo__t{color:#fff!important}
+html body .hd:not(.s) .hd__t,html body .hd:not(.s) .hd__t b,html body .hd:not(.s) .hd__t small{color:#fff!important}
+html body .hd:not(.s) .hd__t small{opacity:.8}
+html body .hd:not(.s) .hd__t i{background:rgba(255,255,255,.18)!important;color:#fff!important}
+}
+@media(min-width:1001px) and (orientation:landscape){
+html body .hero .bul li:before{background:rgba(255,255,255,.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/62% no-repeat!important;border:1px solid rgba(255,255,255,.35)}
+}
