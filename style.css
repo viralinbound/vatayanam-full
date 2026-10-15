@@ -688,3 +688,11 @@ html body .hero__k{max-width:560px}
 html body .hero{background:linear-gradient(98deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 22%,rgba(255,255,255,.6) 38%,rgba(255,255,255,.12) 54%,rgba(255,255,255,0) 66%),linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 22%),url(img2/hero-2x.webp) 60% center/cover no-repeat!important}
 html body .hero:before{opacity:.0!important}
 }
+
+/* less white on the left of the desktop hero; text stays readable through a soft glow instead */
+@media(min-width:1001px){
+html body .hero{background:linear-gradient(98deg,rgba(255,255,255,.82) 0%,rgba(255,255,255,.55) 16%,rgba(255,255,255,.22) 30%,rgba(255,255,255,0) 44%),linear-gradient(180deg,rgba(255,255,255,.3) 0%,rgba(255,255,255,0) 18%),url(img2/hero-2x.webp) 60% center/cover no-repeat!important}
+html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul{text-shadow:0 0 14px rgba(255,255,255,.95),0 0 28px rgba(255,255,255,.8),0 1px 2px rgba(255,255,255,.9)}
+html body .hero h1 .h1b{text-shadow:0 0 14px rgba(255,255,255,.95),0 0 28px rgba(255,255,255,.85)}
+html body .hero__k{font-weight:500;color:#13264d!important}
+}
