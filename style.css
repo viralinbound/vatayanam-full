@@ -787,3 +787,12 @@ html body .hs__track{padding-top:6px!important}
 html body .gr{padding-top:clamp(24px,3vw,40px)!important;padding-bottom:clamp(18px,2.4vw,32px)!important}
 html body .gr h2{margin-top:6px!important}
 @media(max-width:700px){html body .foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))!important;padding-top:20px!important}}
+
+/* tablets: keep About two-column and let the compare table fit without sideways scroll */
+@media(min-width:701px) and (max-width:900px){
+html body .abt{grid-template-columns:1.1fr 1fr!important;gap:24px!important;align-items:start}
+html body .abt h2{font-size:clamp(30px,4.4vw,38px)!important}
+.cmp table{min-width:0!important;table-layout:auto}
+.cmp th,.cmp td{padding:12px 10px!important;font-size:13.5px!important}
+.cmp tbody th{font-size:17px!important;white-space:normal!important}
+}
