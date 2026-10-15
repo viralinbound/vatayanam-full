@@ -695,6 +695,12 @@ html body .hero h1 .h1b{display:block;margin-top:2px}
 html body .hero__k{max-width:560px}
 }
 
+/* desktop hero banner: crisper, brighter photo (2x resampled), white fade only behind the text column */
+@media(min-width:1001px){
+html body .hero{background:linear-gradient(98deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 22%,rgba(255,255,255,.6) 38%,rgba(255,255,255,.12) 54%,rgba(255,255,255,0) 66%),linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 22%),url(img2/hero-2x.webp) 60% center/cover no-repeat!important}
+html body .hero:before{opacity:.0!important}
+}
+
 /* main-site typography */
 /* Google reviews section: interactive carousel + quick enquiry. All classes prefixed gr- to avoid collisions. */
 .gr{position:relative;padding:clamp(64px,9vw,110px) 0;background:radial-gradient(900px 420px at 100% 0%,#E6EEF8,transparent 60%),radial-gradient(800px 480px at 0% 100%,#EEF3FA,transparent 60%),#F4F8FD;color:#012A63;overflow:hidden}
