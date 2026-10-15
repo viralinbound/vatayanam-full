@@ -855,3 +855,22 @@ html body .hd:not(.s) .hd__t i{background:rgba(255,255,255,.18)!important;color:
 @media(min-width:1001px) and (orientation:landscape){
 html body .hero .bul li:before{background:rgba(255,255,255,.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/62% no-repeat!important;border:1px solid rgba(255,255,255,.35)}
 }
+
+/* ===== desktop hero v4: LIGHT brand theme again. Airy ice-white fade behind the text, photo vivid on the right, navy type ===== */
+@media(min-width:1001px) and (orientation:landscape){
+html body .hero{background:linear-gradient(98deg,rgba(246,250,255,.95) 0%,rgba(246,250,255,.9) 24%,rgba(246,250,255,.66) 38%,rgba(246,250,255,.26) 50%,rgba(246,250,255,0) 60%),linear-gradient(180deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,0) 20%),url(img2/hero-2x.webp) 66% center/cover no-repeat!important}
+html body .hero h1{color:#0B1F44!important;text-shadow:none!important}
+html body .hero h1 .h1b{color:#02409A!important;text-shadow:none!important}
+html body .hero__k{color:#1C2B49!important;font-weight:500!important;text-shadow:none!important}
+html body .hero .lab{color:#02409A!important}
+html body .hero .lab:before{background:#02409A!important}
+html body .hero .bul li{color:#1C2B49!important;text-shadow:none!important}
+html body .hero .bul li:before{background:rgba(2,64,154,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2302409A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/62% no-repeat!important;border:1px solid rgba(2,64,154,.25)!important}
+html body .hero__cta .btn:not(.btn--g):not([href^="tel"]){background:linear-gradient(135deg,#0A55C8,#02409A)!important;color:#fff!important;box-shadow:0 16px 30px -14px rgba(2,64,154,.7)!important}
+html body .hero__cta .btn--g,html body .hero__cta .btn[href^="tel"]{background:#fff!important;color:#02409A!important;border:1px solid rgba(2,64,154,.35)!important;box-shadow:0 12px 26px -16px rgba(6,20,47,.45)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+html body .hero__cta .btn--g:hover,html body .hero__cta .btn[href^="tel"]:hover{background:#02409A!important;color:#fff!important}
+html body .hd:not(.s) .logo,html body .hd:not(.s) .logo__t{color:#0B1F44!important}
+html body .hd:not(.s) .hd__t,html body .hd:not(.s) .hd__t b{color:#0B1F44!important}
+html body .hd:not(.s) .hd__t small{color:#33415C!important;opacity:1}
+html body .hd:not(.s) .hd__t i{background:rgba(2,64,154,.1)!important;color:#02409A!important}
+}
