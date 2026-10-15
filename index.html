@@ -946,6 +946,20 @@ html body .gr-st{color:#E85A1A!important}html body .gr-st i{color:#E6E2D8!import
 html body .gr-btn{background:linear-gradient(135deg,#F26A2A,#E85A1A)!important;color:#fff!important}
 html body .gr-card--cta{background:#09315B!important}
 
+/* hero type that reads from across the room: bigger, heavier, higher contrast */
+@media(min-width:1001px) and (orientation:landscape){
+html body .hero{background:linear-gradient(98deg,rgba(250,246,238,.97) 0%,rgba(250,246,238,.94) 30%,rgba(250,246,238,.78) 42%,rgba(250,246,238,.34) 53%,rgba(250,246,238,0) 64%),linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 20%),url(img2/hero-2x.webp) 62% center/cover no-repeat!important}
+html body .hero h1{font-weight:600!important;font-size:clamp(40px,min(4.5vw,7.2vh),66px)!important;line-height:1.04!important;letter-spacing:-.012em;color:#0F1620!important}
+html body .hero h1 .h1b{font-weight:600!important;color:#0E4B8C!important}
+html body .hero__k{font-size:clamp(17px,2.5vh,21px)!important;line-height:1.5!important;font-weight:500!important;color:#0F1620!important;max-width:620px}
+html body .hero .lab{font-size:clamp(12.5px,1.8vh,14px)!important;font-weight:600!important;letter-spacing:.2em!important;color:#BA4815!important}
+html body .hero .lab:before{background:#BA4815!important}
+html body .hero .bul li{font-size:clamp(15px,2.2vh,17.5px)!important;font-weight:500!important;color:#0F1620!important}
+html body .hero__cta .btn{font-size:clamp(15px,2.2vh,17px)!important;min-height:clamp(48px,6.6vh,58px)!important;font-weight:600!important}
+html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul li{text-shadow:0 0 12px rgba(250,246,238,.95),0 0 24px rgba(250,246,238,.85)!important}
+}
+@media(max-width:700px){html body .hero h1{font-weight:600!important}html body .hero__k{font-weight:500!important;color:#0F1620!important}}
+
 /* main-site typography */
 /* Google reviews section: interactive carousel + quick enquiry. All classes prefixed gr- to avoid collisions. */
 .gr{position:relative;padding:clamp(64px,9vw,110px) 0;background:radial-gradient(900px 420px at 100% 0%,#F0EBDF,transparent 60%),radial-gradient(800px 480px at 0% 100%,#FAF6EE,transparent 60%),#FAF6EE;color:#09315B;overflow:hidden}
