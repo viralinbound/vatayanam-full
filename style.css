@@ -565,4 +565,4 @@ main .sec{padding-top:44px!important;padding-bottom:44px!important}
 
 @media(max-width:700px){.dlb__s{place-items:start center;padding:64px 12px 52px}.dlb__s img.z{width:auto!important;max-width:none!important;max-height:none!important;height:auto!important}}
 
-@media(max-width:700px){.dlb__h{bottom:10px;left:50%;right:auto;transform:translateX(-50%);padding:7px 14px;border-radius:99px;background:rgba(6,20,47,.9);white-space:nowrap;font-size:12px}.dlb__h{font-size:0}.dlb__h:after{content:"Swipe to move  b7 tap to fit";font-size:12px}}
+@media(max-width:700px){.dlb__h{bottom:10px;left:50%;right:auto;transform:translateX(-50%);padding:7px 14px;border-radius:99px;background:rgba(6,20,47,.9);white-space:nowrap;font-size:12px}.dlb__h{font-size:0}.dlb__h:after{content:"Swipe to move, tap to fit";font-size:12px}}
