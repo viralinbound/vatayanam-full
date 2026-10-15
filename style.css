@@ -669,3 +669,16 @@ html body .dlb__s img.z{max-width:none!important;max-height:none!important}
 html body .cmp tbody tr.cmp__r.is-open .cmp__d{overflow:visible!important}
 html body .cmp__d img{width:100%!important;min-width:0!important;height:auto!important;max-height:none!important;object-fit:contain!important;padding:8px;box-sizing:border-box}
 }
+
+/* desktop hero form + heading tidy-up: one shared grid (aligned columns), clear space under the pill, wider heading */
+@media(min-width:1001px){
+html body #hq .lf__r{display:contents!important}
+html body #hq{column-gap:14px!important;padding-top:clamp(26px,4vh,36px)!important}
+html body #hq .lf__tag{top:-14px!important}
+html body #hq .lf__h{margin:2px 0 0!important}
+html body #hq label{display:grid;gap:5px;align-content:start}
+html body #hq label input,html body #hq label select{width:100%!important;box-sizing:border-box!important}
+html body .hero h1{max-width:none!important;width:100%!important}
+html body .hero h1 .h1b{display:block;margin-top:2px}
+html body .hero__k{max-width:560px}
+}
