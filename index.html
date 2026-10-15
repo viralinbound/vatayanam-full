@@ -770,6 +770,36 @@ html body .hero__cta{grid-template-columns:1fr 1fr!important}
 .bc:before{background:linear-gradient(180deg,rgba(6,20,47,.1) 0%,rgba(6,20,47,.3) 30%,rgba(6,20,47,.92) 100%)!important}
 .bc h3,.bc p{text-shadow:0 2px 12px rgba(6,20,47,.6)}
 
+/* ===== tighter vertical rhythm: no dead space between sections ===== */
+html body .bph{padding:clamp(34px,4vw,56px) 0 clamp(36px,4.4vw,60px)!important}
+html body .bph .wrap{gap:clamp(14px,1.8vw,22px)!important}
+html body .hs{padding:clamp(34px,4.4vw,60px) 0 clamp(18px,2.4vw,32px)!important}
+html body .hs__track{padding-bottom:clamp(18px,2vw,28px)!important}
+html body .hs__head{margin-bottom:clamp(14px,2vw,24px)!important}
+html body .qband{padding:clamp(40px,5vw,68px) 0!important}
+html body main .sec{padding-top:clamp(30px,3.6vw,48px)!important;padding-bottom:clamp(30px,3.6vw,48px)!important}
+html body .sec h2{margin-bottom:clamp(12px,1.5vw,20px)!important}
+html body .light{margin:0!important}
+html body .gr{padding-top:clamp(30px,3.6vw,48px)!important;padding-bottom:clamp(30px,3.6vw,48px)!important}
+html body .final{padding-top:clamp(34px,4vw,56px)!important;padding-bottom:clamp(34px,4vw,56px)!important;min-height:0!important}
+html body .band{padding:clamp(4px,1vw,12px) 0!important}
+html body .cmp__tip,html body .cmp__n{margin-top:10px!important}
+@media(max-width:700px){
+html body .bph{padding:30px 0 32px!important}
+html body .hs{padding:30px 0 12px!important}
+html body .qband{padding:36px 0!important}
+html body main .sec{padding-top:30px!important;padding-bottom:30px!important}
+}
+@media(min-width:901px){
+html body .hs__head{align-items:center!important}
+html body .hs__meta{flex-direction:row!important;align-items:center!important;gap:clamp(12px,1.6vw,22px)!important;flex-wrap:nowrap}
+html body .hs__bar{width:clamp(120px,14vw,220px)!important}
+html body .hs__track{padding-top:6px!important}
+}
+html body .gr{padding-top:clamp(24px,3vw,40px)!important;padding-bottom:clamp(18px,2.4vw,32px)!important}
+html body .gr h2{margin-top:6px!important}
+@media(max-width:700px){html body .foot{padding-bottom:calc(84px + env(safe-area-inset-bottom))!important;padding-top:20px!important}}
+
 /* main-site typography */
 /* Google reviews section: interactive carousel + quick enquiry. All classes prefixed gr- to avoid collisions. */
 .gr{position:relative;padding:clamp(64px,9vw,110px) 0;background:radial-gradient(900px 420px at 100% 0%,#E6EEF8,transparent 60%),radial-gradient(800px 480px at 0% 100%,#EEF3FA,transparent 60%),#F4F8FD;color:#012A63;overflow:hidden}
