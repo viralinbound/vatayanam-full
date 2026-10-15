@@ -949,3 +949,11 @@ html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul 
 @media(max-width:700px){html body .hero h1{font-weight:600!important}html body .hero__k{font-weight:500!important;color:#0F1620!important}}
 
 .cprev{display:none!important}
+
+/* card media: Product (profile render) first, then Section drawing, then In use (photo) */
+.hc .sc__img .sc__pr{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:contain!important;background:radial-gradient(75% 75% at 50% 45%,#fff 0%,#F6F1E6 100%);padding:30px 22px 26px;transform:none!important;z-index:2}
+.hc .sc__img[data-m="draw"] .sc__pr,.hc .sc__img[data-m="photo"] .sc__pr{display:none}
+.hc .sc__img[data-m="prod"] .sc__dr{display:none}
+.sc__pf{display:none!important}
+.sc__tg button{padding:7px 10px}
+@media(max-width:700px){.sc__tg button{padding:6px 8px;font-size:10.5px}.hc .sc__img .sc__pr{padding:40px 12px 12px}}
