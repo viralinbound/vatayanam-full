@@ -46,7 +46,7 @@ const SERIES = [
 ];
 const BEN = [['Sound insulation', 'Significantly reduces external noise, ideal for urban surroundings.'], ['Wind load', 'Engineered to withstand high wind loads, durable and safe in harsh weather.'], ['Water tightness', 'Water-tight design that prevents leaks and keeps performance long-lasting.'], ['Air permeability', 'Contributes to energy efficiency by maintaining optimal indoor temperatures.'], ['Impact resistance', 'Impact-resistant, adding another layer of protection and durability.'], ['Sleek aesthetics', 'Functional strength blended with sleek, modern design that lifts any elevation.']];
 const STEPS = [['Share your openings', 'Tell us about your project. V-Tech’s team calls you back.'], ['Pick the series', 'Get guidance on the right Vatayanam series for each opening.'], ['Made at Vatayanam', 'Windows and doors are made at V-Tech’s own facility in Bengaluru.'], ['Technical confirmation', 'Final values are confirmed with V-Tech’s technical department.']];
-const GAL2 = [['hero', 'Residential elevation'], ['office', 'Glass and aluminium facade'], ['family', 'Living space'], ['vivid', 'Vivid large sliding doors'], ['jett', 'Jett balcony system'], ['louvre', 'Glazing & louvre facade']];
+const GAL2 = [['hero', 'Sleek designs, high performance.'], ['ruby', 'Windows breathe life into spaces, filling them with light and dreams.'], ['sapphire', 'Doors invite the soul of a space to embrace the outside world.'], ['pearl', 'Follow your bliss and the universe will open doors where there were only walls.'], ['emerald', 'Large doors invite the majesty of the outside world, bridging vast spaces.'], ['vivid', 'Large doors symbolize grand opportunities, blending strength with timeless elegance.']];
 const TECH = [
   ['Opal', 'Sliding', '25mm slim', '2300mm', '5 to 18mm', 'Automatic, manual concealed, multipoint'],
   ['Ruby', 'Sliding', 'Sash 62/25mm', '2300mm', 'Single 5 to 8mm, double up to 18mm', 'Single point & multipoint'],
@@ -104,7 +104,7 @@ h1,h2,h3{font-weight:600;line-height:1.02;letter-spacing:-.02em}
 .logo{display:flex;align-items:center;gap:10px;font:800 26px 'Archivo',sans-serif;font-stretch:125%;letter-spacing:-.01em}.logo img{width:38px;height:38px;object-fit:contain}
 .hd__r{display:flex;align-items:center;gap:14px}.hd__t{font-size:14px;color:var(--tx);padding:0 4px;min-height:44px;display:flex;align-items:center}.hd .btn{min-height:44px;padding:0 20px;font-size:14px}
 /* hero */
-.hero{background:linear-gradient(105deg,rgba(1,20,52,.94) 0%,rgba(2,42,99,.82) 50%,rgba(2,64,154,.5) 100%),url(img2/hero-building.webp) center/cover;min-height:0;display:grid;align-items:center;padding:88px 0 36px;border-bottom:1px solid var(--ln)}
+.hero{background:linear-gradient(105deg,rgba(1,20,52,.94) 0%,rgba(2,42,99,.82) 50%,rgba(2,64,154,.5) 100%),url(img2/hero.webp) center/cover;min-height:0;display:grid;align-items:center;padding:88px 0 36px;border-bottom:1px solid var(--ln)}
 .hero h1{font-size:clamp(40px,7vw,96px);max-width:15ch;margin-bottom:24px}.hero p{font-size:clamp(17px,1.7vw,21px);color:var(--mu);max-width:640px;margin-bottom:32px}
 .hero__g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.7fr);gap:clamp(28px,5vw,80px);align-items:center}
 .hero h1{font-size:clamp(32px,4.2vw,58px);max-width:20ch;margin-bottom:16px}.h1b{display:block;color:var(--mu);font-size:.62em;font-weight:500;margin-top:10px;letter-spacing:-.01em}.hero p{margin-bottom:16px;font-size:clamp(15px,1.4vw,18px)}
@@ -203,9 +203,9 @@ let html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta nam
 <title>Aluminium Windows & Doors in Bangalore | Vatayanam by V-Tech | Free Quote</title>
 <meta name="description" content="Vatayanam System Aluminium windows, doors, balcony and facade systems by V-Tech Building Systems, Bengaluru. 11 series. Free quote. Call ${P1}.">
 <meta name="robots" content="index,follow,max-image-preview:large"><meta name="geo.region" content="IN-KA"><meta name="geo.placename" content="Bengaluru">
-<link rel="preload" as="image" href="${A}hero-feature.webp">
+<link rel="preload" as="image" href="${A}hero.webp">
 <meta name="theme-color" content="#FFFFFF"><link rel="canonical" href="${SITE}">
-<meta property="og:type" content="website"><meta property="og:title" content="Vatayanam Aluminium Windows & Doors | V-Tech"><meta property="og:description" content="Slim System Aluminium windows and doors, Bharat make, European engineering."><meta property="og:image" content="${SITE}${A}hero-feature.webp"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website"><meta property="og:title" content="Vatayanam Aluminium Windows & Doors | V-Tech"><meta property="og:description" content="Slim System Aluminium windows and doors, Bharat make, European engineering."><meta property="og:image" content="${SITE}${A}hero.webp"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(LD)}</script>
 <link rel="icon" type="image/svg+xml" href="${I}vtech-icon.svg"><link rel="icon" type="image/png" sizes="32x32" href="${I}vtech-icon-32.png"><link rel="apple-touch-icon" href="${I}vtech-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -250,8 +250,8 @@ ${REVTHEME}
 <section class="hs" id="systems" aria-label="Aluminium series"><div class="hs__pin"><div class="wrap hs__head"><div><span class="lab rv">11 series</span><h2 class="rv">Choose the system.</h2></div><div class="hs__meta"><span class="hs__cnt"><b>01</b> / 11</span><span class="hs__name">Opal</span><div class="hs__bar" aria-hidden="true"><i></i></div><div class="hs__arrows"><button type="button" class="hs__a hs__prev" aria-label="Previous series">&larr;</button><button type="button" class="hs__a hs__next" aria-label="Next series">&rarr;</button></div></div></div><div class="hs__track">${stackCards}</div></div></section>
 <section class="qband"><div class="wrap"><blockquote class="rv">Happiness is the biggest <em>window</em> a house can ever have!</blockquote><span class="rv">Vatayanam · Sleek designs, high performance</span></div></section>
 <section class="sec cmp" id="compare"><div class="wrap"><span class="lab rv">Technical characteristics</span><h2 class="rv">Compare the series.</h2><div class="cmp__t rv"><table><thead><tr><th>Series</th><th>Type</th><th>Profile</th><th>Max height / size</th><th>Glass range</th><th>Locking</th></tr></thead><tbody>${TECH.map((r) => `<tr>${r.map((c, k) => k === 0 ? `<th scope="row">${esc(c)}</th>` : `<td data-l="${['', 'Type', 'Profile', 'Max height / size', 'Glass range', 'Locking'][k]}">${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="cmp__n rv">Values are from the Vatayanam brochure and are for reference only. The brochure advises taking prior confirmation from V-Tech’s technical department.</p></div></section>
-<section class="sec gal" id="projects"><div class="wrap"><span class="lab rv">Spaces</span><h2 class="rv">Made for homes, offices and facades.</h2><div class="gal__g">${GAL2.map(([g,n],i)=>`<figure class="rv g${i+1}"><img src="${A}${g}.webp" alt="${n}, image from the Vatayanam brochure" width="800" height="600" loading="lazy"><figcaption>${n}</figcaption></figure>`).join('')}</div></div></section>
-<section class="sec how" id="how"><div class="wrap"><span class="lab rv">From enquiry to opening</span><h2 class="rv">How it works.</h2><ol class="hw">${STEPS.map(([t,d],i)=>`<li class="rv"><b>0${i+1}</b><h3>${t}</h3><p>${d}</p></li>`).join('')}</ol></div></section>
+<section class="sec gal" id="projects"><div class="wrap"><span class="lab rv">From the Vatayanam brochure</span><h2 class="rv">Sleek designs, high performance.</h2><div class="gal__g">${GAL2.map(([g,q],i)=>`<figure class="rv g${i+1}"><img src="${A}${g}.webp" alt="Vatayanam brochure photo: ${esc(q)}" width="800" height="600" loading="lazy"><figcaption>${esc(q)}</figcaption></figure>`).join('')}</div></div></section>
+
 <div class="light">${REV.html}</div>
 
 
