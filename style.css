@@ -961,3 +961,8 @@ html body .hero h1,html body .hero__k,html body .hero .lab,html body .hero .bul 
 .hc .sc__img .sc__pr[data-fit="cover"]{object-fit:cover!important;padding:0!important;background:#012A63}
 .hc .sc__img .sc__pr[data-fit="contain"]{background:#fff;padding:22px 18px 20px}
 .hc .sc__img .sc__pr[data-fit="cover"],.hc .sc__img .sc__pr[data-fit="contain"]{object-fit:contain!important;padding:26px 16px 22px!important;background:radial-gradient(80% 80% at 50% 45%,#fff 0%,#EEF3FA 100%)!important}
+
+/* ===== Vatayanam logo in header (replaces V-TECH icon + wordmark) ===== */
+html body .logo--v{gap:0;padding:0;line-height:0}
+html body .logo--v img{width:auto!important;height:46px!important;max-width:none;object-fit:contain;border-radius:3px;box-shadow:0 6px 18px -10px rgba(11,31,68,.45)}
+@media(max-width:560px){html body .logo--v img{height:36px!important}}

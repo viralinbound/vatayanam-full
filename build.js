@@ -231,9 +231,9 @@ ${REVTHEME}
   .foot{padding-bottom:28px!important}
 }
 </style></head><body>
-<header class="hd"><div class="wrap"><a class="logo" href="#top" aria-label="V-Tech"><img src="${I}vtech-icon.svg" alt="" width="30" height="30">V-TECH</a><div class="hd__r"><a class="hd__t" href="${tel(P1)}" data-track="call" aria-label="Call ${P1}"><i><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i><span><small>Talk to expert</small><b>${P1}</b></span></a><a class="btn hd__q" href="#hq" data-track="cta_header">Get Free Quote</a></div></div></header>
+<header class="hd"><div class="wrap"><a class="logo logo--v" href="#top" aria-label="Vatayanam home"><img src="${I}vatayanam-logo.webp?v=1" alt="Vatayanam: Sleek designs, high performance" width="640" height="191"></a><div class="hd__r"><a class="hd__t" href="${tel(P1)}" data-track="call" aria-label="Call ${P1}"><i><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></i><span><small>Talk to expert</small><b>${P1}</b></span></a><a class="btn hd__q" href="#hq" data-track="cta_header">Get Free Quote</a></div></div></header>
 <main id="top">
-<section class="hero"><div class="wrap hero__g"><div class="hero__l"><span class="lab">Vatayanam by V-Tech · Bengaluru</span>
+<section class="hero"><div class="wrap hero__g"><div class="hero__l"><span class="lab">System Aluminium · Bengaluru</span>
 <h1>Advanced aluminium windows &amp; doors. <span class="h1b">Sleek designs, high performance.</span></h1>
 <p class="hero__k">Slim System Aluminium windows, doors, balcony and facade systems. Bharat make, European engineering, from V-Tech Building Systems, Bengaluru.</p>
 <div class="hero__cta"><a class="btn btn--pill" href="#hq">Get Free Quote →</a><a class="btn btn--pill btn--g" href="${tel(P1)}" data-track="call">Call ${P1}</a></div>
