@@ -219,7 +219,7 @@
 
   /* live Google reviews: window.VTECH_REVIEWS_URL returns [{name, ts|time, stars|rating, text}] or {reviews:[...]} */
   var ALU = /alumin|vatayanam|louvre|fa[cç]ade/i, LINE = root.getAttribute('data-line') || 'upvc';
-  var COL = ['#0E4B8C', '#E85A1A', '#09315B', '#BA4815', '#4B5667', '#0F1620', '#1B4E87', '#F26A2A'];
+  var COL = ['#02409A', '#02409A', '#012A63', '#01306F', '#4A5873', '#0B1F44', '#1B4E87', '#0A56C8'];
   var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function inject(list) {
