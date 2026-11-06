@@ -39,7 +39,7 @@ const hero = `<section class="hero" id="top"><div class="hero__bg" aria-hidden="
 const statementText = 'Windows decide how a home feels: the light it lets in, the quiet it keeps, the view it frames. Vatayanam brings slim, European-engineered aluminium to every opening.';
 const statement = `<section class="st"><div class="w st__g"><div class="st__x"><span class="eyebrow up">Vatayanam System Aluminium</span><p class="st__t up">${statementText}</p><div class="st__f up"><div><b>25mm</b><span>Slimmest series</span></div><div><b>4600mm</b><span>Tallest doors</span></div><div><b>3</b><span>Finish families</span></div></div></div><figure class="st__m up"><img class="img" src="${A}opal-use.webp" alt="Living room with Vatayanam corner sliding windows, image from the Vatayanam brochure" loading="lazy" width="1100" height="654"><figcaption>Corner sliding glazing · Sliding systems</figcaption></figure></div></section>`;
 
-const pillars = `<section class="pl"><div class="w"><div class="sh"><span class="eyebrow up">What every Vatayanam window delivers</span><h2 class="h2 up">Design, comfort, performance, security.</h2></div><div class="pl__g">${PILLARS.map(([k, h, d, im], i) => `<article class="pl__c up" style="--d:${i * 0.1}s"><div class="pl__m"><img class="img" src="${A}${im}" alt="" loading="lazy" width="800" height="1000"></div><div class="pl__x"><span class="pl__k">${pad(i + 1)} — ${k}</span><h3>${h}</h3><p>${d}</p></div></article>`).join('')}</div></div></section>`;
+const pillars = `<section class="pl"><div class="w"><div class="sh"><span class="eyebrow up">What every Vatayanam window delivers</span><h2 class="h2 up">Design, comfort, performance, security.</h2></div><div class="pl__g">${PILLARS.map(([k, h, d, im], i) => `<article class="pl__c up" style="--d:${i * 0.1}s"><div class="pl__m"><img class="img" src="${A}${im}" alt="" loading="lazy" width="800" height="1000"></div><div class="pl__x"><span class="pl__k">${pad(i + 1)} — ${k}</span><h3>${h}</h3><p>${d}</p></div></article>`).join('')}</div><p class="swipe-hint">Swipe</p></div></section>`;
 
 const seriesList = SERIES.map(([n, g], i) => `<li><button type="button" data-i="${i}" ${i === 0 ? 'class="on" aria-current="true"' : ''}><span class="sx__n">${pad(i + 1)}</span><span class="sx__nm">${esc(n)}</span><span class="sx__ty">${esc(g)}</span></button></li>`).join('');
 const seriesPanels = SERIES.map(([n, g, k, d, specs], i) => `<article class="sx__p${i === 0 ? ' on' : ''}" data-i="${i}" ${i === 0 ? '' : 'hidden'}><div class="sx__v" data-m="prod"><img class="sx__prod" src="${A}${k}-render.webp" alt="Vatayanam ${esc(n)} profile, product render from the brochure" loading="${i < 2 ? 'eager' : 'lazy'}" width="800" height="800"><img class="sx__draw" src="${A}${k}-drawing.webp" data-xl="${A}${k}-drawing-xl.webp" alt="${esc(n)} section drawing" loading="lazy" width="800" height="500"><img class="sx__use" src="${A}${k}-use.webp" alt="Vatayanam ${esc(n)} in use, image from the brochure" loading="lazy" width="1100" height="700">
@@ -52,13 +52,13 @@ const series = `<section class="cs" id="series"><div class="w cs__hd"><div><span
 const SW = { pc: ['#F3F2EE', '#D8D5CE', '#A3A7AB', '#5D6268', '#2E3236', '#1A1C1F', '#24364F', '#46503F'], an: ['linear-gradient(180deg,#ECEEEF,#B9BDC0 55%,#DCDFE1)', 'linear-gradient(180deg,#E8DCC3,#BFAE8C 55%,#DACCB0)', 'linear-gradient(180deg,#8E6E50,#5B4330 55%,#7A5C42)', 'linear-gradient(180deg,#3E3F41,#1C1D1F 55%,#303133)'], wd: ['repeating-linear-gradient(92deg,rgba(110,70,30,0) 0 6px,rgba(110,70,30,.14) 6px 7px,rgba(110,70,30,0) 7px 15px),linear-gradient(90deg,#D9B98C,#C9A473 40%,#D6B485 70%,#C29C6A)', 'repeating-linear-gradient(91deg,rgba(60,30,10,0) 0 5px,rgba(60,30,10,.22) 5px 6px,rgba(60,30,10,0) 6px 13px),linear-gradient(90deg,#9A6538,#83532B 45%,#946033 75%,#7A4C26)', 'repeating-linear-gradient(93deg,rgba(20,10,5,0) 0 4px,rgba(20,10,5,.28) 4px 5px,rgba(20,10,5,0) 5px 12px),linear-gradient(90deg,#5A3A24,#472D1B 45%,#563823 75%,#3F2717)'] };
 const finishes = `<section class="fn" id="finishes"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Colours &amp; finishes</span><h2 class="h2 up">Your elevation, your palette.</h2></div><p class="lead up">Every Vatayanam series can be finished to suit the architecture, across three coating families and a wide range of colours. One finish throughout, or a different shade inside and out.</p></div>
 <div class="fn__g up">${FIN.map(([t, s, d, c], i) => `<article class="fn__c" tabindex="0"><div class="fn__sw">${SW[c].map((b) => `<i style="background:${b}"></i>`).join('')}</div><div class="fn__x"><span class="fn__n">${pad(i + 1)}</span><h3>${t}</h3><span class="fn__s">${s}</span><p>${d}</p></div></article>`).join('')}</div>
-<div class="fn__f up"><p>Shades shown are indicative. The full Vatayanam colour and finish range is available from V-Tech on request.</p><a class="lnk" href="#quote" data-track="cta_finishes">Ask for the shade card</a></div></div></section>`;
+<p class="swipe-hint">Swipe</p><div class="fn__f up"><p>Shades shown are indicative. The full Vatayanam colour and finish range is available from V-Tech on request.</p><a class="lnk" href="#quote" data-track="cta_finishes">Ask for the shade card</a></div></div></section>`;
 
 const gallery = `<section class="gl" id="applications"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Applications</span><h2 class="h2 up">Where Vatayanam fits.</h2></div><div class="cs__meta gl__meta up"><span class="cs__cnt"><b class="gl__n">01</b> / ${pad(GAL2.length)}</span><span class="cs__nm gl__nm">${esc(GAL2[0][1])}</span><div class="cs__bar"><i class="gl__bar" style="width:${(100 / GAL2.length).toFixed(2)}%"></i></div><div class="cs__ar"><button type="button" class="cs__a gl__a" data-d="-1" aria-label="Previous">←</button><button type="button" class="cs__a gl__a" data-d="1" aria-label="Next">→</button></div></div></div></div>
 <div class="gl__t" tabindex="0" aria-label="Applications gallery">${GAL2.map(([g, q, sr], i) => `<figure class="gl__i up" style="--d:${(i % 3) * 0.08}s"><div class="gl__m"><img class="img" src="${A}${g}.webp" alt="${esc(q)}: Vatayanam ${esc(sr)}, image from the Vatayanam brochure" loading="lazy" width="1100" height="760"></div><figcaption><span>${pad(i + 1)}</span><b>${esc(q)}</b><em>${esc(sr)}</em></figcaption></figure>`).join('')}</div></section>`;
 
 const specs = `<section class="sp" id="specs"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Technical characteristics</span><h2 class="h2 up">Compare the series.</h2></div><p class="lead up">Values from the Vatayanam brochure, for reference. V-Tech confirms final values with its technical department.</p></div>
-<div class="sp__t up"><table><thead><tr><th>Series</th><th>Type</th><th>Profile</th><th>Max height / size</th><th>Glass range</th><th>Locking</th></tr></thead><tbody>${TECH.map((r) => `<tr>${r.map((c, k) => (k === 0 ? `<th scope="row">${esc(c)}</th>` : `<td data-l="${['', 'Type', 'Profile', 'Max height / size', 'Glass range', 'Locking'][k]}">${esc(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div></div></section>`;
+<div class="sp__t up"><table><thead><tr><th>Series</th><th>Type</th><th>Profile</th><th>Max height / size</th><th>Glass range</th><th>Locking</th></tr></thead><tbody>${TECH.map((r) => `<tr>${r.map((c, k) => (k === 0 ? `<th scope="row">${esc(c)}</th>` : `<td data-l="${['', 'Type', 'Profile', 'Max height / size', 'Glass range', 'Locking'][k]}">${esc(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div><p class="swipe-hint">Swipe</p></div></section>`;
 
 const tst = TST.length ? `<section class="ts"><div class="w"><div class="sh"><span class="eyebrow up">Client testimonials</span><h2 class="h2 up">In our clients’ words.</h2></div><div class="ts__g">${TST.map(([q, n, p]) => `<figure class="ts__c up"><blockquote>“${esc(q)}”</blockquote><figcaption><b>${esc(n)}</b><span>${esc(p)}</span></figcaption></figure>`).join('')}</div></div></section>` : '';
 
@@ -308,7 +308,7 @@ html:not(.ready) .ln>span,html:not(.ready) .fade,html:not(.ready) .hero__f,html:
 /* marquee */
 .mq{overflow:hidden;padding:clamp(22px,3vw,40px) 0;background:var(--ivory);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
 .mq__t{display:flex;align-items:center;gap:clamp(22px,3vw,48px);width:max-content;animation:mq 46s linear infinite}
-.mq span{font:300 clamp(40px,6vw,96px)/1 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(2,103,178,.4);white-space:nowrap}
+.mq span{font:300 clamp(40px,6vw,96px)/1 var(--serif);color:var(--blue);-webkit-text-stroke:0;white-space:nowrap}
 .mq span em{color:var(--ink);-webkit-text-stroke:0}
 .mq i{font-style:normal;color:var(--blue);font-size:clamp(16px,1.6vw,24px)}
 @keyframes mq{to{transform:translateX(-50%)}}
@@ -319,6 +319,77 @@ html:not(.ready) .ln>span,html:not(.ready) .fade,html:not(.ready) .hero__f,html:
 .sh .h2:after,.cs__hd .h2:after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin-top:22px}
 .sh--split .h2:after{margin-top:18px}
 @media(prefers-reduced-motion:reduce){.pre{display:none}.grain,.mq__t{animation:none}}
+
+/* ===== MOBILE PREMIUM (≤700px): full-screen photo hero, swipe cards, compact form ===== */
+.swipe-hint{display:none}
+@media(max-width:700px){
+body{font-size:16px}
+.h2{font-size:clamp(34px,9.6vw,44px)!important;line-height:1.06}
+.eyebrow{font-size:10px;letter-spacing:.28em;margin-bottom:16px}.eyebrow:before{width:24px}
+.sh .h2:after,.cs__hd .h2:after{margin-top:16px;width:40px}
+.st,.pl,.cs,.fn,.gl,.sp,.ab,.fq{padding-top:52px!important;padding-bottom:52px!important}
+.sh{margin-bottom:26px}
+/* hero: the photo owns the whole first screen, the form follows as a floating card */
+.hero{background:var(--stone);justify-content:flex-start}
+.hero__bg,.hero:after{bottom:auto!important;height:100svh}
+.hero:after{background:linear-gradient(0deg,rgba(2,30,54,.92) 0%,rgba(2,30,54,.55) 45%,rgba(2,30,54,.25) 75%,rgba(2,30,54,.55) 100%)!important}
+.hero__g{padding-top:0!important;gap:0!important}
+.hero__t{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 0 64px}
+.hero .eyebrow{color:rgba(255,255,255,.85);text-shadow:0 1px 10px rgba(0,0,0,.4)}.hero__h{font-size:clamp(42px,12.4vw,54px)!important;line-height:1.02;margin-bottom:20px}
+.hero__p{font-size:15.5px;margin-bottom:28px}
+.hero__cta{flex-direction:column;align-items:stretch;gap:16px}.hero__cta .b{width:100%}.hero__cta .lnk{align-self:center}
+.hero__f{margin-top:-34px;position:relative;z-index:3}
+.f{padding:26px 22px;box-shadow:0 30px 60px -30px rgba(2,52,89,.45);border-top:3px solid var(--blue)}
+.f__h{font-size:30px}
+.f label:has([name=email]),.f label:has([name=qty]),.f label:has([name=colour]){display:none}
+.f__r{grid-template-columns:1fr!important}
+.hero__facts{margin-top:0!important;padding:34px 0 10px;border-top:0!important;grid-template-columns:1fr 1fr!important;gap:0;color:var(--ink)}
+.hero__facts div{padding:16px 0!important;border-left:0!important;border-top:1px solid var(--ln)!important}
+.hero__facts div:nth-child(even){padding-left:18px!important;border-left:1px solid var(--ln)!important}
+.hero__facts b{font-size:36px;color:var(--blue)}.hero__facts span{color:var(--mu)}
+/* statement */
+.st__t{font-size:27px;line-height:1.28}
+.st__f b{font-size:26px}.st__f span{font-size:9.5px;letter-spacing:.14em}.st__f div+div{padding-left:14px}
+.st__m img{aspect-ratio:4/3.2}
+/* pillars: swipe cards */
+.pl__g{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -16px;padding:0 16px 4px;scrollbar-width:none}.pl__g::-webkit-scrollbar{display:none}
+.pl__c{flex:0 0 80%;aspect-ratio:3/4.1!important;scroll-snap-align:start}
+.pl__c h3{font-size:28px}
+.swipe-hint{display:flex;align-items:center;gap:10px;margin-top:16px;font:500 10px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mu)}.swipe-hint:after{content:"";width:34px;height:1px;background:currentColor;animation:hint 1.8s var(--e) infinite}
+@keyframes hint{0%{transform:translateX(0);opacity:1}100%{transform:translateX(14px);opacity:0}}
+/* marquee smaller */
+.mq{padding:18px 0}.mq span{font-size:40px}
+/* series card */
+.cs__hd{gap:16px}.cs__meta{grid-template-columns:auto 1fr auto}.cs__nm{font-size:22px}.cs__a{width:46px;height:46px}
+.cs__v{min-height:300px!important}.cs__d{padding:24px 20px 28px}.cs__d h3{font-size:42px}.cs__d p{font-size:15px}
+.cs__d li{font-size:14px}
+/* finishes: swipe cards */
+.fn__g{flex-direction:row!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -16px;padding:0 16px 4px;scrollbar-width:none;height:auto!important}.fn__g::-webkit-scrollbar{display:none}
+.fn__c{flex:0 0 82%!important;scroll-snap-align:start}.fn__c.on{flex:0 0 82%!important}
+.fn__sw{height:190px!important;flex:none!important}
+.fn__f{flex-direction:column;align-items:flex-start}
+/* gallery */
+.gl__i{width:84vw}.gl__i figcaption b{font-size:20px}
+/* specs: one swipe card per series instead of a wide table */
+.sp table{min-width:0!important;display:block}.sp thead{display:none}
+.sp tbody{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;scrollbar-width:none;padding:2px 0 4px}.sp tbody::-webkit-scrollbar{display:none}
+.sp__t{border:0!important;background:none!important;overflow:visible!important}
+.sp tr{flex:0 0 82%;scroll-snap-align:start;display:block;background:#fff;border:1px solid var(--ln);border-top:3px solid var(--blue);padding:18px 18px 8px}
+.sp tbody th{display:block;border:0;padding:0 0 10px;font-size:30px}
+.sp td{display:flex;justify-content:space-between;gap:16px;padding:10px 0;font-size:14px;text-align:right}
+.sp td:before{content:attr(data-l);font:500 9.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mu);text-align:left;flex:none;max-width:45%}
+.sp tr:last-child td{border-bottom:1px solid var(--ln)}.sp tr td:last-child{border-bottom:0}
+.sp .lead{font-size:15px}
+/* about */
+.ab__m{aspect-ratio:4/3!important}.ab__x>p{font-size:15.5px}
+/* faq */
+.fq summary{font-size:20px;padding:18px 0}
+/* closing */
+.ct{padding:80px 0!important}.ct__h{font-size:48px!important}.ct__b{flex-direction:column;align-items:stretch;width:100%}.ct__b .b{width:100%}.ct__b .lnk{align-self:center}
+/* bottom bar */
+.mb{padding:10px 12px calc(10px + env(safe-area-inset-bottom))!important;gap:10px;box-shadow:0 -10px 30px -12px rgba(2,52,89,.25)!important}
+.mb .b{min-height:52px}.mb .b--ghost{border-color:var(--blue);color:var(--blue)}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.up,.img,.fade,.hero__f{opacity:1!important;transform:none!important}.ln>span{transform:none!important}.hero__bg{transform:none}}
 `;
 
