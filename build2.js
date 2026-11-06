@@ -60,7 +60,10 @@ const gallery = `<section class="gl" id="applications"><div class="w"><div class
 const specs = `<section class="sp" id="specs"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Technical characteristics</span><h2 class="h2 up">Compare the series.</h2></div><p class="lead up">Values from the Vatayanam brochure, for reference. V-Tech confirms final values with its technical department.</p></div>
 <div class="sp__t up"><table><thead><tr><th>Series</th><th>Type</th><th>Profile</th><th>Max height / size</th><th>Glass range</th><th>Locking</th></tr></thead><tbody>${TECH.map((r) => `<tr>${r.map((c, k) => (k === 0 ? `<th scope="row">${esc(c)}</th>` : `<td data-l="${['', 'Type', 'Profile', 'Max height / size', 'Glass range', 'Locking'][k]}">${esc(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div><p class="swipe-hint">Swipe</p></div></section>`;
 
-const tst = TST.length ? `<section class="ts"><div class="w"><div class="sh"><span class="eyebrow up">Client testimonials</span><h2 class="h2 up">In our clients’ words.</h2></div><div class="ts__g">${TST.map(([q, n, p]) => `<figure class="ts__c up"><blockquote>“${esc(q)}”</blockquote><figcaption><b>${esc(n)}</b><span>${esc(p)}</span></figcaption></figure>`).join('')}</div></div></section>` : '';
+const WA = 'https://wa.me/919740422863?text=' + encodeURIComponent('Hi V-Tech, I am a Vatayanam client and would like to share my experience.');
+const tst = `<section class="ts" id="testimonials"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Client testimonials</span><h2 class="h2 up">In our clients’ words.</h2></div><p class="lead up">Homeowners, architects and builders on living and working with Vatayanam System Aluminium.</p></div>
+${TST.length ? `<div class="ts__g">${TST.map(([q, n, pj]) => `<figure class="ts__c up"><span class="ts__q" aria-hidden="true">“</span><blockquote>${esc(q)}</blockquote><figcaption><b>${esc(n)}</b><span>${esc(pj)}</span></figcaption></figure>`).join('')}</div>` : ''}
+<div class="ts__inv up"><span class="ts__q" aria-hidden="true">“</span><div class="ts__ix"><span class="ts__k">Are you a Vatayanam client?</span><h3>Your project could be the next story here.</h3><p>Share a few words about your windows and doors, and a photo of the installation if you like. With your permission, we will feature it on this page.</p></div><div class="ts__ib"><a class="b b--light" href="${WA}" target="_blank" rel="noopener" data-track="testimonial_whatsapp">Share on WhatsApp <span aria-hidden="true">→</span></a><a class="lnk lnk--light" href="mailto:${EMAIL}?subject=${encodeURIComponent('My Vatayanam experience')}" data-track="testimonial_email">Or send an email</a></div></div></div></section>`;
 
 const about = `<section class="ab" id="visit"><div class="w ab__g"><div class="ab__m up"><img class="img" src="${A}office.webp" alt="Glass and aluminium facade, image from the Vatayanam brochure" loading="lazy" width="1497" height="1045"></div><div class="ab__x"><span class="eyebrow up">About Vatayanam</span><h2 class="h2 up">European engineering, Bharat make.</h2><p class="up">V-Tech Building Systems Pvt. Ltd was established in 2012 and works with a team of over 150 professionals. Its facility can produce up to 100 windows per day. Backed by its experience in facade and fenestration, V-Tech created Vatayanam, a dedicated facility and team for System Aluminium windows and doors.</p>
 <div class="ab__l up"><div><span class="ab__k">Experience Centre</span><p>No. 693, M.N.S. Arcade, 1st &amp; 3rd Floor, Dr. Rajkumar Road, 6th Block, Rajajinagar, Bengaluru 560 010</p></div><div><span class="ab__k">Works · Hesaraghatta</span><p>No. 162/1, N.S.R. Complex and No. 150, Beside ICTS, Kalenahalli, Shivakote, Bengaluru 560 089</p></div><div><span class="ab__k">Contact</span><p><a href="${tel(P1)}" data-track="call">${P1}</a><br>${EMAIL}</p></div></div></div></div></section>`;
@@ -244,8 +247,20 @@ em{font-style:italic}
 .sp tbody th{font:400 22px var(--serif);color:var(--ink);white-space:nowrap}
 .sp tbody tr{transition:background .4s}.sp tbody tr:hover{background:#EEF5FB}
 /* testimonials */
-.ts{padding:clamp(56px,6vw,88px) 0;background:#fff}.ts__g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.ts__c blockquote{font:300 24px/1.45 var(--serif);margin-bottom:24px}.ts__c figcaption{display:grid;border-top:1px solid var(--ln);padding-top:14px}.ts__c b{font-weight:500}.ts__c span{color:var(--mu);font-size:14px}
-@media(max-width:860px){.ts__g{grid-template-columns:1fr}}
+.ts{padding:clamp(56px,6vw,88px) 0;background:#fff}
+.ts__g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,24px);margin-bottom:clamp(14px,1.6vw,24px)}
+.ts__c{position:relative;margin:0;background:var(--stone);padding:34px 30px 28px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px}
+.ts__c blockquote{font:300 22px/1.5 var(--serif);color:var(--ink);margin:18px 0 26px}
+.ts__c figcaption{display:grid;gap:2px;border-top:1px solid var(--ln);padding-top:14px}.ts__c b{font:500 15px var(--sans)}.ts__c figcaption span{font:400 13.5px var(--sans);color:var(--mu)}
+.ts__q{font:400 110px/.6 var(--serif);color:var(--blue);display:block;height:46px}
+.ts__inv{position:relative;overflow:hidden;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(20px,3.4vw,56px);align-items:center;padding:clamp(30px,4vw,56px);background:linear-gradient(120deg,var(--deep) 0%,var(--blue) 100%);color:#fff}
+.ts__inv:after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border:1px solid rgba(255,255,255,.14);border-radius:50%}
+.ts__inv .ts__q{color:rgba(255,255,255,.35);font-size:150px;height:70px}
+.ts__k{display:block;font:500 11px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--sky);margin-bottom:10px}
+.ts__inv h3{font:300 clamp(28px,2.8vw,42px)/1.12 var(--serif);margin-bottom:12px;color:#fff}
+.ts__inv p{font:300 16px/1.7 var(--sans);color:rgba(255,255,255,.82);max-width:560px}
+.ts__ib{position:relative;z-index:1;display:grid;justify-items:center;gap:16px}
+@media(max-width:900px){.ts__g{grid-template-columns:1fr}.ts__inv{grid-template-columns:1fr;gap:10px}.ts__inv .ts__q{height:50px;font-size:120px}.ts__ib{justify-items:stretch;margin-top:10px}.ts__ib .lnk{justify-self:center}.ts__c{min-height:0}}
 /* about */
 .ab{padding:clamp(56px,6vw,88px) 0;background:#fff}
 .ab__g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,110px);align-items:center}
@@ -329,7 +344,7 @@ body{font-size:16px}
 .h2{font-size:clamp(34px,9.6vw,44px)!important;line-height:1.06}
 .eyebrow{font-size:10px;letter-spacing:.28em;margin-bottom:16px}.eyebrow:before{width:24px}
 .sh .h2:after,.cs__hd .h2:after{margin-top:16px;width:40px}
-.st,.pl,.cs,.fn,.gl,.sp,.ab,.fq{padding-top:52px!important;padding-bottom:52px!important}
+.st,.pl,.cs,.fn,.gl,.sp,.ab,.fq,.ts{padding-top:52px!important;padding-bottom:52px!important}
 .sh{margin-bottom:26px}
 /* hero: the photo owns the whole first screen, the form follows as a floating card */
 .hero{background:var(--stone);justify-content:flex-start}
