@@ -37,16 +37,16 @@ const hero = `<section class="hero" id="top"><div class="hero__bg" aria-hidden="
 <div class="w hero__facts fade"><div><b>2012</b><span>Established</span></div><div><b>150+</b><span>Professionals</span></div><div><b>11</b><span>Aluminium series</span></div><div><b>100</b><span>Windows a day, factory capacity</span></div></div></section>`;
 
 const statementText = 'Windows decide how a home feels: the light it lets in, the quiet it keeps, the view it frames. Vatayanam brings slim, European-engineered aluminium to every opening.';
-const statement = `<section class="st"><div class="w st__g"><div class="st__x"><span class="eyebrow up">Vatayanam System Aluminium</span><p class="st__t up">${statementText}</p><div class="st__f up"><div><b>25mm</b><span>Slimmest series</span></div><div><b>4600mm</b><span>Tallest doors</span></div><div><b>3</b><span>Finish families</span></div></div></div><figure class="st__m up"><img class="img" src="${A}opal-use.webp" srcset="${A}opal-use-640.webp 640w, ${A}opal-use.webp 1100w" sizes="(max-width:900px) 92vw, 50vw" alt="Living room with Vatayanam corner sliding windows, image from the Vatayanam brochure" loading="lazy" width="1100" height="654"><figcaption>Corner sliding glazing · Sliding systems</figcaption></figure></div></section>`;
+const statement = `<section class="st"><div class="w st__g"><div class="st__x"><span class="eyebrow up">Vatayanam System Aluminium</span><p class="st__t up">${statementText}</p><div class="st__f up"><div><b>25mm</b><span>Slimmest series</span></div><div><b>4600mm</b><span>Tallest doors</span></div><div><b>3</b><span>Finish families</span></div></div></div><figure class="st__m up"><img class="img" src="${A}opal-use.webp" alt="Living room with Vatayanam corner sliding windows, image from the Vatayanam brochure" loading="lazy" width="1100" height="654"><figcaption>Corner sliding glazing · Sliding systems</figcaption></figure></div></section>`;
 
-const pillars = `<section class="pl"><div class="w"><div class="sh"><span class="eyebrow up">What every Vatayanam window delivers</span><h2 class="h2 up">Design, comfort, performance, security.</h2></div><div class="pl__g">${PILLARS.map(([k, h, d, im], i) => `<article class="pl__c up" style="--d:${i * 0.1}s"><div class="pl__m"><img class="img" src="${A}${im}" srcset="${A}${im.replace('.webp', '-640.webp')} 640w, ${A}${im} 1100w" sizes="(max-width:700px) 80vw, 25vw" alt="" loading="lazy" width="800" height="1000"></div><div class="pl__x"><span class="pl__k">${pad(i + 1)} — ${k}</span><h3>${h}</h3><p>${d}</p></div></article>`).join('')}</div><p class="swipe-hint">Swipe</p></div></section>`;
+const pillars = `<section class="pl"><div class="w"><div class="sh"><span class="eyebrow up">What every Vatayanam window delivers</span><h2 class="h2 up">Design, comfort, performance, security.</h2></div><div class="pl__g">${PILLARS.map(([k, h, d, im], i) => `<article class="pl__c up" style="--d:${i * 0.1}s"><div class="pl__m"><img class="img" src="${A}${im}" alt="" loading="lazy" width="800" height="1000"></div><div class="pl__x"><span class="pl__k">${pad(i + 1)} — ${k}</span><h3>${h}</h3><p>${d}</p></div></article>`).join('')}</div><p class="swipe-hint">Swipe</p></div></section>`;
 
 const seriesList = SERIES.map(([n, g], i) => `<li><button type="button" data-i="${i}" ${i === 0 ? 'class="on" aria-current="true"' : ''}><span class="sx__n">${pad(i + 1)}</span><span class="sx__nm">${esc(n)}</span><span class="sx__ty">${esc(g)}</span></button></li>`).join('');
 const seriesPanels = SERIES.map(([n, g, k, d, specs], i) => `<article class="sx__p${i === 0 ? ' on' : ''}" data-i="${i}" ${i === 0 ? '' : 'hidden'}><div class="sx__v" data-m="prod"><img class="sx__prod" src="${A}${k}-render.webp" alt="Vatayanam ${esc(n)} profile, product render from the brochure" loading="${i < 2 ? 'eager' : 'lazy'}" width="800" height="800"><img class="sx__draw" src="${A}${k}-drawing.webp" data-xl="${A}${k}-drawing-xl.webp" alt="${esc(n)} section drawing" loading="lazy" width="800" height="500"><img class="sx__use" src="${A}${k}-use.webp" alt="Vatayanam ${esc(n)} in use, image from the brochure" loading="lazy" width="1100" height="700">
 <div class="sx__tabs" role="group" aria-label="View"><button type="button" data-m="prod" aria-pressed="true">Product</button><button type="button" data-m="draw" aria-pressed="false">Section drawing</button><button type="button" data-m="use" aria-pressed="false">In use</button></div></div>
 <div class="sx__d"><span class="sx__k">${pad(i + 1)} / ${SERIES.length} · ${esc(g)}</span><h3>${esc(n)}</h3><p>${esc(d)}</p><ul>${specs.map((f) => `<li>${esc(f)}</li>`).join('')}</ul><a class="b b--light" href="#quote" data-pick="${esc(n)}">Get a quote for ${esc(n)} <span aria-hidden="true">→</span></a></div></article>`).join('');
 const series = `<section class="cs" id="series"><div class="w cs__hd"><div><span class="eyebrow up">11 series</span><h2 class="h2 up">Choose the system.</h2></div><div class="cs__meta up"><span class="cs__cnt"><b>01</b> / ${SERIES.length}</span><span class="cs__nm">${esc(SERIES[0][0])}</span><div class="cs__bar"><i></i></div><div class="cs__ar"><button type="button" class="cs__a" data-d="-1" aria-label="Previous series">←</button><button type="button" class="cs__a" data-d="1" aria-label="Next series">→</button></div></div></div>
-<div class="cs__vp up"><div class="cs__tr">${SERIES.map(([n, g, k, d, specs], i) => `<article class="cs__c" data-i="${i}"><div class="cs__v" data-m="prod"><img class="cs__prod" src="${A}${k}-render.webp" alt="Vatayanam ${esc(n)} profile, product render from the brochure" loading="${i < 2 ? 'eager' : 'lazy'}" width="800" height="800"><img class="cs__draw" src="${A}${k}-drawing.webp" data-xl="${A}${k}-drawing-xl.webp" alt="${esc(n)} section drawing" loading="lazy" width="800" height="500"><img class="cs__use" src="${A}${k}-use.webp" srcset="${A}${k}-use-640.webp 640w, ${A}${k}-use.webp 1100w" sizes="(max-width:700px) 92vw, 50vw" alt="Vatayanam ${esc(n)} in use, image from the brochure" loading="lazy" width="1100" height="700"><div class="cs__tabs" role="group" aria-label="View"><button type="button" data-m="prod" aria-pressed="true">Product</button><button type="button" data-m="draw" aria-pressed="false">Section drawing</button><button type="button" data-m="use" aria-pressed="false">In use</button></div></div>
+<div class="cs__vp up"><div class="cs__tr">${SERIES.map(([n, g, k, d, specs], i) => `<article class="cs__c" data-i="${i}"><div class="cs__v" data-m="prod"><img class="cs__prod" src="${A}${k}-render.webp" alt="Vatayanam ${esc(n)} profile, product render from the brochure" loading="${i < 2 ? 'eager' : 'lazy'}" width="800" height="800"><img class="cs__draw" src="${A}${k}-drawing.webp" data-xl="${A}${k}-drawing-xl.webp" alt="${esc(n)} section drawing" loading="lazy" width="800" height="500"><img class="cs__use" src="${A}${k}-use.webp" alt="Vatayanam ${esc(n)} in use, image from the brochure" loading="lazy" width="1100" height="700"><div class="cs__tabs" role="group" aria-label="View"><button type="button" data-m="prod" aria-pressed="true">Product</button><button type="button" data-m="draw" aria-pressed="false">Section drawing</button><button type="button" data-m="use" aria-pressed="false">In use</button></div></div>
 <div class="cs__d"><span class="cs__k">${pad(i + 1)} / ${SERIES.length} · ${esc(g)}</span><h3>${esc(n)}</h3><p>${esc(d)}</p><ul>${specs.map((f) => `<li>${esc(f)}</li>`).join('')}</ul><a class="b b--solid" href="#quote" data-pick="${esc(n)}">Get quote for this <span aria-hidden="true">→</span></a></div></article>`).join('')}</div></div></section>`;
 
 const SW = { pc: ['#F3F2EE', '#D8D5CE', '#A3A7AB', '#5D6268', '#2E3236', '#1A1C1F', '#24364F', '#46503F'], an: ['linear-gradient(180deg,#ECEEEF,#B9BDC0 55%,#DCDFE1)', 'linear-gradient(180deg,#E8DCC3,#BFAE8C 55%,#DACCB0)', 'linear-gradient(180deg,#8E6E50,#5B4330 55%,#7A5C42)', 'linear-gradient(180deg,#3E3F41,#1C1D1F 55%,#303133)'], wd: ['repeating-linear-gradient(92deg,rgba(110,70,30,0) 0 6px,rgba(110,70,30,.14) 6px 7px,rgba(110,70,30,0) 7px 15px),linear-gradient(90deg,#D9B98C,#C9A473 40%,#D6B485 70%,#C29C6A)', 'repeating-linear-gradient(91deg,rgba(60,30,10,0) 0 5px,rgba(60,30,10,.22) 5px 6px,rgba(60,30,10,0) 6px 13px),linear-gradient(90deg,#9A6538,#83532B 45%,#946033 75%,#7A4C26)', 'repeating-linear-gradient(93deg,rgba(20,10,5,0) 0 4px,rgba(20,10,5,.28) 4px 5px,rgba(20,10,5,0) 5px 12px),linear-gradient(90deg,#5A3A24,#472D1B 45%,#563823 75%,#3F2717)'] };
@@ -55,7 +55,7 @@ const finishes = `<section class="fn" id="finishes"><div class="w"><div class="s
 <p class="swipe-hint">Swipe</p><div class="fn__f up"><p>Shades shown are indicative. The full Vatayanam colour and finish range is available from V-Tech on request.</p><a class="lnk" href="#quote" data-track="cta_finishes">Ask for the shade card</a></div></div></section>`;
 
 const gallery = `<section class="gl" id="applications"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Applications</span><h2 class="h2 up">Where Vatayanam fits.</h2></div><div class="gl__meta up"><div class="gl__track"><i class="gl__bar"></i></div><div class="cs__ar"><button type="button" class="cs__a gl__a" data-d="-1" aria-label="Previous">←</button><button type="button" class="cs__a gl__a" data-d="1" aria-label="Next">→</button></div></div></div></div>
-<div class="gl__t" tabindex="0" aria-label="Applications gallery">${GAL2.map(([g, q, sr], i) => `<figure class="gl__i up" style="--d:${(i % 3) * 0.08}s"><div class="gl__m"><img class="img" src="${A}${g}.webp" srcset="${A}${g}-640.webp 640w, ${A}${g}.webp 1100w" sizes="(max-width:700px) 84vw, 40vw" alt="${esc(q)}: Vatayanam ${esc(sr)}, image from the Vatayanam brochure" loading="lazy" width="1100" height="760"></div><figcaption><span>${pad(i + 1)}</span><b>${esc(q)}</b><em>${esc(sr)}</em></figcaption></figure>`).join('')}</div></section>`;
+<div class="gl__t" tabindex="0" aria-label="Applications gallery">${GAL2.map(([g, q, sr], i) => `<figure class="gl__i up" style="--d:${(i % 3) * 0.08}s"><div class="gl__m"><img class="img" src="${A}${g}.webp" alt="${esc(q)}: Vatayanam ${esc(sr)}, image from the Vatayanam brochure" loading="lazy" width="1100" height="760"></div><figcaption><span>${pad(i + 1)}</span><b>${esc(q)}</b><em>${esc(sr)}</em></figcaption></figure>`).join('')}</div></section>`;
 
 const specs = `<section class="sp" id="specs"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Technical characteristics</span><h2 class="h2 up">Compare the series.</h2></div><p class="lead up">Values from the Vatayanam brochure, for reference. V-Tech confirms final values with its technical department.</p></div>
 <div class="sp__t up"><table><thead><tr><th>Series</th><th>Type</th><th>Profile</th><th>Max height / size</th><th>Glass range</th><th>Locking</th></tr></thead><tbody>${TECH.map((r) => `<tr>${r.map((c, k) => (k === 0 ? `<th scope="row">${esc(c)}</th>` : `<td data-l="${['', 'Type', 'Profile', 'Max height / size', 'Glass range', 'Locking'][k]}">${esc(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div><p class="swipe-hint">Swipe</p></div></section>`;
@@ -65,10 +65,10 @@ const tst = `<section class="ts" id="testimonials"><div class="w"><div class="sh
 ${TST.length ? `<div class="ts__g">${TST.map(([q, n, pj]) => `<figure class="ts__c up"><span class="ts__q" aria-hidden="true">“</span><blockquote>${esc(q)}</blockquote><figcaption><b>${esc(n)}</b><span>${esc(pj)}</span></figcaption></figure>`).join('')}</div>` : ''}
 <div class="ts__inv up"><span class="ts__q" aria-hidden="true">“</span><div class="ts__ix"><span class="ts__k">Are you a Vatayanam client?</span><h3>Your project could be the next story here.</h3><p>Share a few words about your windows and doors, and a photo of the installation if you like. With your permission, we will feature it on this page.</p></div><div class="ts__ib"><a class="b b--light" href="${WA}" target="_blank" rel="noopener" data-track="testimonial_whatsapp">Share on WhatsApp <span aria-hidden="true">→</span></a><a class="lnk lnk--light" href="mailto:${EMAIL}?subject=${encodeURIComponent('My Vatayanam experience')}" data-track="testimonial_email">Or send an email</a></div></div></div></section>`;
 
-const about = `<section class="ab" id="visit"><div class="w ab__g"><div class="ab__m up"><img class="img" src="${A}office.webp" srcset="${A}office-640.webp 640w, ${A}office.webp 1497w" sizes="(max-width:860px) 92vw, 50vw" alt="Glass and aluminium facade, image from the Vatayanam brochure" loading="lazy" width="1497" height="1045"></div><div class="ab__x"><span class="eyebrow up">About Vatayanam</span><h2 class="h2 up">European engineering, Bharat make.</h2><p class="up">V-Tech Building Systems Pvt. Ltd was established in 2012 and works with a team of over 150 professionals. Its facility can produce up to 100 windows per day. Backed by its experience in facade and fenestration, V-Tech created Vatayanam, a dedicated facility and team for System Aluminium windows and doors.</p>
+const about = `<section class="ab" id="visit"><div class="w ab__g"><div class="ab__m up"><img class="img" src="${A}office.webp" alt="Glass and aluminium facade, image from the Vatayanam brochure" loading="lazy" width="1497" height="1045"></div><div class="ab__x"><span class="eyebrow up">About Vatayanam</span><h2 class="h2 up">European engineering, Bharat make.</h2><p class="up">V-Tech Building Systems Pvt. Ltd was established in 2012 and works with a team of over 150 professionals. Its facility can produce up to 100 windows per day. Backed by its experience in facade and fenestration, V-Tech created Vatayanam, a dedicated facility and team for System Aluminium windows and doors.</p>
 <div class="ab__l up"><div><span class="ab__k">Experience Centre</span><p>No. 693, M.N.S. Arcade, 1st &amp; 3rd Floor, Dr. Rajkumar Road, 6th Block, Rajajinagar, Bengaluru 560 010</p></div><div><span class="ab__k">Works · Hesaraghatta</span><p>No. 162/1, N.S.R. Complex and No. 150, Beside ICTS, Kalenahalli, Shivakote, Bengaluru 560 089</p></div><div><span class="ab__k">Contact</span><p><a href="${tel(P1)}" data-track="call">${P1}</a><br>${EMAIL}</p></div></div></div></div></section>`;
 
-const faq = `<section class="fq"><div class="w fq__g"><div class="sh"><span class="eyebrow up">Questions</span><h2 class="h2 up">Good to know.</h2></div><div class="fq__l up">${FAQ.map(([q, a]) => `<details><summary>${esc(q)}<i aria-hidden="true"></i></summary><p>${esc(a)}</p></details>`).join('')}</div></div></section>`;
+const faq = `<section class="fq"><div class="w fq__g"><div class="sh"><span class="eyebrow up">Questions</span><h2 class="h2 up">Good to know.</h2><div class="fq__ask up"><p>Didn’t find your answer? Talk to the Vatayanam team directly.</p><a class="fq__tel" href="${tel(P1)}" data-track="call_faq">${P1}</a><a class="lnk" href="#quote" data-track="cta_faq">Request a free site visit</a></div></div><div class="fq__l up">${FAQ.map(([q, a]) => `<details><summary>${esc(q)}<i aria-hidden="true"></i></summary><p>${esc(a)}</p></details>`).join('')}</div></div></section>`;
 
 const cta = `<section class="ct"><div class="ct__bg" aria-hidden="true"></div><div class="w ct__in"><span class="eyebrow eyebrow--light up">Private consultation</span><h2 class="ct__h up">Let’s plan your openings.</h2><p class="up">Free site visit and measurement, with guidance on series, finish and glazing for every opening.</p><div class="ct__b up"><a class="b b--light" href="#quote" data-track="cta_final">Request a quote</a><a class="lnk lnk--light" href="${tel(P1)}" data-track="call">Call ${P1}</a></div></div></section>`;
 
@@ -90,7 +90,7 @@ em{font-style:italic}
 .eyebrow--light{color:var(--sky)}
 .h2{font-size:clamp(40px,5vw,78px);max-width:16ch}
 .lead{font:300 18px/1.7 var(--sans);color:var(--mu);max-width:460px}
-.sh{margin-bottom:clamp(24px,3vw,44px)}.sh--split{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 60px}.sh--split .h2{margin:0}
+.sh{margin-bottom:clamp(20px,2.4vw,34px)}.sh--split{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 60px}.sh--split .h2{margin:0}
 /* buttons + links */
 .b{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 34px;font:500 12.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;transition:background .5s var(--e),color .5s var(--e),border-color .5s var(--e),transform .5s var(--e);position:relative;overflow:hidden;isolation:isolate}
 .b:before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleX(0);transform-origin:right;transition:transform .6s var(--e)}.b:hover:before{transform:scaleX(1);transform-origin:left}
@@ -143,7 +143,7 @@ em{font-style:italic}
 .up{opacity:0;transform:translateY(34px);transition:opacity 1.2s var(--e) var(--d,0s),transform 1.2s var(--e) var(--d,0s)}.up.in{opacity:1;transform:none}
 .img{opacity:0;transform:scale(1.06);transition:opacity 1.4s var(--e),transform 2.2s var(--e)}.in .img,.img.in{opacity:1;transform:none}
 /* statement */
-.st{padding:clamp(56px,6vw,88px) 0}
+.st{padding:clamp(44px,4.6vw,68px) 0}
 .st__g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(30px,5vw,90px);align-items:center}
 .st__t{font:300 clamp(28px,3vw,46px)/1.22 var(--serif);letter-spacing:-.01em;color:var(--ink);margin-bottom:clamp(26px,3vw,40px)}
 .st__f{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ln)}
@@ -167,7 +167,7 @@ em{font-style:italic}
 @media(hover:none),(max-width:980px){.pl__c p{max-height:none;opacity:1;margin-top:12px}}
 @media(max-width:980px){.pl__g{grid-template-columns:1fr 1fr}}@media(max-width:560px){.pl__g{grid-template-columns:1fr}.pl__c{aspect-ratio:4/4.4}}
 /* series index */
-.sx{background:var(--deep);color:#fff;padding:clamp(56px,6vw,88px) 0}
+.sx{background:var(--deep);color:#fff;padding:clamp(44px,4.6vw,68px) 0}
 .sx .h2{color:#fff}
 .sx__g{display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,2fr);gap:clamp(30px,5vw,90px);align-items:start}
 .sx__l{border-top:1px solid rgba(255,255,255,.14);position:sticky;top:110px}
@@ -189,7 +189,7 @@ em{font-style:italic}
 @media(max-width:860px){.sx__g{grid-template-columns:1fr}.sx__l{position:static;display:flex;overflow-x:auto;gap:0;border:0;scrollbar-width:none;margin:0 -16px;padding:0 16px}.sx__l::-webkit-scrollbar{display:none}.sx__l li{flex:none}.sx__l button{grid-template-columns:auto;padding:10px 16px;border:1px solid rgba(255,255,255,.14);margin-right:-1px}.sx__n{display:none}.sx__nm{font-size:20px}.sx__l .sx__ty{display:none}.sx__l button.on{background:#fff;color:var(--navy)}.sx__l button:hover{padding-left:16px}}
 
 /* series carousel (the layout the client liked) */
-.cs{padding:clamp(56px,6vw,88px) 0;background:var(--stone);overflow:hidden}
+.cs{padding:clamp(44px,4.6vw,68px) 0;background:var(--stone);overflow:hidden}
 .cs__hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 40px;margin-bottom:clamp(30px,3.6vw,48px)}.cs__hd .h2{margin:0}
 .cs__meta{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px 18px;min-width:min(420px,100%)}
 .cs__cnt{font:500 12px var(--sans);letter-spacing:.2em;color:var(--mu)}.cs__cnt b{color:var(--ink);font-weight:500}
@@ -217,7 +217,7 @@ em{font-style:italic}
 .gl__meta{display:flex;align-items:center;gap:22px;min-width:min(360px,100%)}.gl__track{flex:1;height:1px;background:var(--ln);position:relative}.gl__bar{position:absolute;left:0;top:-1px;height:3px;width:12%;background:var(--blue)!important;transition:width .3s linear}
 @media(max-width:700px){.gl__meta{width:100%;gap:14px}}
 /* finishes: expanding panels */
-.fn{padding:clamp(56px,6vw,88px) 0}
+.fn{padding:clamp(44px,4.6vw,68px) 0}
 .fn__g{display:flex;gap:clamp(10px,1.2vw,18px);height:clamp(420px,40vw,520px)}
 .fn__c{flex:1;position:relative;overflow:hidden;background:#fff;cursor:pointer;transition:flex 1s var(--e);outline:none;display:flex;flex-direction:column}
 .fn__c.on{flex:1.8}
@@ -230,7 +230,7 @@ em{font-style:italic}
 .fn__f{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 40px;margin-top:26px}.fn__f p{font:400 13.5px var(--sans);color:var(--mu)}
 @media(max-width:860px){.fn__g{flex-direction:column;height:auto}.fn__sw{height:140px;flex:none}.fn__c p{max-height:none;opacity:1;margin-top:10px}}
 /* gallery: horizontal track */
-.gl{padding:clamp(56px,6vw,88px) 0;background:var(--stone)}.fn,.fq{background:#fff}.pl,.st,.sp{background:#fff}.ab{background:var(--stone)!important}.mq{background:#fff!important}
+.gl{padding:clamp(44px,4.6vw,68px) 0;background:var(--stone)}.fn,.fq{background:#fff}.pl,.st,.sp{background:#fff}.ab{background:var(--stone)!important}.mq{background:#fff!important}
 .gl__meta{min-width:min(460px,100%)}@media(max-width:600px){.gl__t{padding:0 16px;scroll-padding:0 16px}}.gl__c{font:500 12px var(--sans);letter-spacing:.2em;color:var(--mu);margin-right:14px}.gl__c b{color:var(--ink);font-weight:500}
 .gl__a{width:54px;height:54px;border:1px solid var(--ln);background:transparent;font-size:18px;transition:background .4s,color .4s,border-color .4s}.gl__a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
 .gl__t{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 max(24px,calc((100vw - 1320px)/2));scroll-padding:0 max(24px,calc((100vw - 1320px)/2));scrollbar-width:none;cursor:grab}.gl__t::-webkit-scrollbar{display:none}
@@ -239,7 +239,7 @@ em{font-style:italic}
 .gl__i figcaption{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:baseline;padding-top:18px;border-bottom:1px solid var(--ln);padding-bottom:16px}
 .gl__i figcaption span{font:500 11px var(--sans);letter-spacing:.2em;color:var(--blue)}.gl__i figcaption b{font:400 24px var(--serif)}.gl__i figcaption em{font:500 10.5px var(--sans);font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--mu)}
 /* specs */
-.sp{padding:clamp(56px,6vw,88px) 0}
+.sp{padding:clamp(44px,4.6vw,68px) 0}
 .sp__t{overflow-x:auto;background:#fff;border:1px solid var(--ln)}
 .sp table{width:100%;border-collapse:collapse;min-width:820px}
 .sp th,.sp td{text-align:left;padding:18px 20px;font:400 14.5px/1.5 var(--sans);color:#33415C;border-bottom:1px solid var(--ln);vertical-align:top}
@@ -247,7 +247,7 @@ em{font-style:italic}
 .sp tbody th{font:400 22px var(--serif);color:var(--ink);white-space:nowrap}
 .sp tbody tr{transition:background .4s}.sp tbody tr:hover{background:#EEF5FB}
 /* testimonials */
-.ts{padding:clamp(56px,6vw,88px) 0;background:#fff}
+.ts{padding:clamp(44px,4.6vw,68px) 0;background:#fff}
 .ts__g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,24px);margin-bottom:clamp(14px,1.6vw,24px)}
 .ts__c{position:relative;margin:0;background:var(--stone);padding:34px 30px 28px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px}
 .ts__c blockquote{font:300 22px/1.5 var(--serif);color:var(--ink);margin:18px 0 26px}
@@ -262,7 +262,7 @@ em{font-style:italic}
 .ts__ib{position:relative;z-index:1;display:grid;justify-items:center;gap:16px}
 @media(max-width:900px){.ts__g{grid-template-columns:1fr}.ts__inv{grid-template-columns:1fr;gap:10px}.ts__inv .ts__q{height:50px;font-size:120px}.ts__ib{justify-items:stretch;margin-top:10px}.ts__ib .lnk{justify-self:center}.ts__c{min-height:0}}
 /* about */
-.ab{padding:clamp(56px,6vw,88px) 0;background:#fff}
+.ab{padding:clamp(44px,4.6vw,68px) 0;background:#fff}
 .ab__g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,110px);align-items:center}
 .ab__m{overflow:hidden;aspect-ratio:4/5}.ab__m img{width:100%;height:100%;object-fit:cover}
 .ab__x>p{font:300 17px/1.8 var(--sans);color:var(--mu);margin-bottom:34px;max-width:520px}
@@ -270,7 +270,7 @@ em{font-style:italic}
 .ab__k{font:500 10.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding-top:4px}.ab__l p{font:400 15px/1.6 var(--sans);color:var(--ink)}
 @media(max-width:860px){.ab__g{grid-template-columns:1fr}.ab__m{aspect-ratio:4/3}.ab__l>div{grid-template-columns:1fr;gap:4px}}
 /* faq */
-.fq{padding:clamp(56px,6vw,88px) 0}.fq__g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,90px)}
+.fq{padding:clamp(44px,4.6vw,68px) 0}.fq__g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,90px)}
 .fq__l{border-top:1px solid var(--ln)}.fq details{border-bottom:1px solid var(--ln)}
 .fq summary{list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px 0;font:400 clamp(20px,1.8vw,26px)/1.3 var(--serif);cursor:pointer;transition:color .4s}.fq summary::-webkit-details-marker{display:none}.fq summary:hover{color:var(--blue)}
 .fq summary i{position:relative;flex:none;width:14px;height:14px}.fq summary i:before,.fq summary i:after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:currentColor;transition:transform .5s var(--e)}.fq summary i:after{transform:rotate(90deg)}.fq details[open] summary i:after{transform:none}
@@ -344,7 +344,7 @@ body{font-size:16px}
 .h2{font-size:clamp(34px,9.6vw,44px)!important;line-height:1.06}
 .eyebrow{font-size:10px;letter-spacing:.28em;margin-bottom:16px}.eyebrow:before{width:24px}
 .sh .h2:after,.cs__hd .h2:after{margin-top:16px;width:40px}
-.st,.pl,.cs,.fn,.gl,.sp,.ab,.fq,.ts{padding-top:52px!important;padding-bottom:52px!important}
+.st,.pl,.cs,.fn,.gl,.sp,.ab,.fq,.ts{padding-top:40px!important;padding-bottom:40px!important}
 .sh{margin-bottom:26px}
 /* hero: the photo owns the whole first screen, the form follows as a floating card */
 .hero{background:var(--stone);justify-content:flex-start}
@@ -478,11 +478,20 @@ body{font-size:16px}
 .hero__h{font-size:clamp(44px,5.4vw,84px)!important;margin-bottom:20px}.hero__p{margin-bottom:26px}
 }
 
-/* phones load the lighter hero / closing photos */
-@media(max-width:700px){.hero__bg{background-image:url(${A}hero-real-900.webp)!important}.ct__bg{background-image:url(${A}app-facade-640.webp)!important}}
 /* drawing view: tell people they can open it full screen */
 .cs__v[data-m=draw]:after{content:"⤢  Tap to enlarge";position:absolute;top:14px;right:14px;z-index:3;padding:7px 11px;background:rgba(2,52,89,.86);color:#fff;font:500 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;pointer-events:none;animation:fadeup .5s var(--e)}
 @media(min-width:1025px){.cs__v[data-m=draw]:after{top:auto;bottom:16px}}
+
+/* ===== photos shown whole, no empty space ===== */
+.st__m img{height:auto!important;aspect-ratio:1100/654!important}
+.st__g{align-items:center}
+@media(min-width:981px){.pl .h2{max-width:none}.pl__c{aspect-ratio:4/5}}
+.fq__g>.sh{align-self:start;position:sticky;top:110px;margin-bottom:0}
+.fq__ask{margin-top:clamp(24px,3vw,40px);padding:22px 24px;background:var(--stone);border-left:3px solid var(--blue);display:grid;gap:10px;justify-items:start;max-width:380px}
+.fq__ask p{font:300 15.5px/1.6 var(--sans);color:var(--mu)}
+.fq__tel{font:400 30px/1.1 var(--serif);color:var(--blue)}
+@media(max-width:860px){.fq__g>.sh{position:static}.fq__ask{display:none}}
+@media(max-width:700px){.sh{margin-bottom:20px!important}.swipe-hint{margin-top:12px}.ct{padding:60px 0!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.up,.img,.fade,.hero__f{opacity:1!important;transform:none!important}.ln>span{transform:none!important}.hero__bg{transform:none}}
 `;
 
