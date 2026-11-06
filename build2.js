@@ -21,11 +21,11 @@ const header = `<header class="h" id="h"><div class="w h__in"><a class="h__logo"
 <div class="h__r"><a class="h__tel" href="${tel(P1)}" data-track="call"><small>Talk to an expert</small>${P1}</a><a class="b b--solid h__cta" href="#quote">Get a quote</a></div></div></header>`;
 
 const opts = SERIES.map(([n]) => `<option>${esc(n)}</option>`).join('');
-const form = `<form id="quote" class="f" data-lead novalidate><div class="f__hd"><span class="f__k">Free quote · Site visit</span><h2 class="f__h">Request a quote</h2></div>
-<div class="f__r"><label>First name *<input name="name" autocomplete="given-name" placeholder="First name"></label><label>Last name<input name="last" autocomplete="family-name" placeholder="Last name"></label></div>
-<div class="f__r"><label>Phone *<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 9XXXX XXXXX"></label><label>Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com"></label></div>
-<div class="f__r"><label>Series<select name="product"><option value="">Not sure yet</option>${opts}</select></label><label>How many?<select name="qty"><option>1 to 3</option><option>4 to 6</option><option>7 to 10</option><option>11 to 20</option><option>More than 20</option><option>Full home / building project</option></select></label></div>
-<label>Finish<select name="colour"><option value="">Not decided</option><option>Powder-coated</option><option>Anodised</option><option>Wood finish</option></select></label>
+const form = `<form id="quote" class="f" data-lead novalidate><div class="f__hd"><span class="f__k">Free quote · Site visit</span><h2 class="f__h">Request a quote</h2><p class="f__note">Free site visit and measurement, no obligation.</p></div>
+<div class="f__r f__r--keep"><label>First name *<input name="name" autocomplete="given-name" placeholder="First name"></label><label>Last name<input name="last" autocomplete="family-name" placeholder="Last name"></label></div>
+<div class="f__r"><label>Phone *<span class="f__ph"><b>+91</b><input name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="14" placeholder="98XXX XXXXX"></span></label><label class="f__em">Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com"></label></div>
+<div class="f__r"><label>Series<select name="product"><option value="">Not sure yet</option>${opts}</select></label><label class="f__qt">How many?<select name="qty"><option>1 to 3</option><option>4 to 6</option><option>7 to 10</option><option>11 to 20</option><option>More than 20</option><option>Full home / building project</option></select></label></div>
+<div class="f__fin"><span class="f__lb">Finish</span><div class="f__chips" role="group" aria-label="Preferred finish"><button type="button" data-v="Powder-coated" aria-pressed="false"><i style="background:linear-gradient(135deg,#F3F2EE 50%,#2E3236 50%)"></i>Powder-coated</button><button type="button" data-v="Anodised" aria-pressed="false"><i style="background:linear-gradient(180deg,#E9EBEC,#B9BDC0 55%,#D9DCDE)"></i>Anodised</button><button type="button" data-v="Wood finish" aria-pressed="false"><i style="background:linear-gradient(90deg,#C9A473,#83532B)"></i>Wood</button></div><input type="hidden" name="colour" value=""></div>
 <button class="b b--solid b--full" type="submit">Submit request <span aria-hidden="true">→</span></button><p class="f__st" role="status" aria-live="polite"></p><p class="f__n">Used only to contact you about this request.</p></form>`;
 
 const hero = `<section class="hero" id="top"><div class="hero__bg" aria-hidden="true"></div><div class="w hero__g"><div class="hero__t">
@@ -54,7 +54,7 @@ const finishes = `<section class="fn" id="finishes"><div class="w"><div class="s
 <div class="fn__g up">${FIN.map(([t, s, d, c], i) => `<article class="fn__c" tabindex="0"><div class="fn__sw">${SW[c].map((b) => `<i style="background:${b}"></i>`).join('')}</div><div class="fn__x"><span class="fn__n">${pad(i + 1)}</span><h3>${t}</h3><span class="fn__s">${s}</span><p>${d}</p></div></article>`).join('')}</div>
 <p class="swipe-hint">Swipe</p><div class="fn__f up"><p>Shades shown are indicative. The full Vatayanam colour and finish range is available from V-Tech on request.</p><a class="lnk" href="#quote" data-track="cta_finishes">Ask for the shade card</a></div></div></section>`;
 
-const gallery = `<section class="gl" id="applications"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Applications</span><h2 class="h2 up">Where Vatayanam fits.</h2></div><div class="cs__meta gl__meta up"><span class="cs__cnt"><b class="gl__n">01</b> / ${pad(GAL2.length)}</span><span class="cs__nm gl__nm">${esc(GAL2[0][1])}</span><div class="cs__bar"><i class="gl__bar" style="width:${(100 / GAL2.length).toFixed(2)}%"></i></div><div class="cs__ar"><button type="button" class="cs__a gl__a" data-d="-1" aria-label="Previous">←</button><button type="button" class="cs__a gl__a" data-d="1" aria-label="Next">→</button></div></div></div></div>
+const gallery = `<section class="gl" id="applications"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Applications</span><h2 class="h2 up">Where Vatayanam fits.</h2></div><div class="gl__meta up"><div class="gl__track"><i class="gl__bar"></i></div><div class="cs__ar"><button type="button" class="cs__a gl__a" data-d="-1" aria-label="Previous">←</button><button type="button" class="cs__a gl__a" data-d="1" aria-label="Next">→</button></div></div></div></div>
 <div class="gl__t" tabindex="0" aria-label="Applications gallery">${GAL2.map(([g, q, sr], i) => `<figure class="gl__i up" style="--d:${(i % 3) * 0.08}s"><div class="gl__m"><img class="img" src="${A}${g}.webp" alt="${esc(q)}: Vatayanam ${esc(sr)}, image from the Vatayanam brochure" loading="lazy" width="1100" height="760"></div><figcaption><span>${pad(i + 1)}</span><b>${esc(q)}</b><em>${esc(sr)}</em></figcaption></figure>`).join('')}</div></section>`;
 
 const specs = `<section class="sp" id="specs"><div class="w"><div class="sh sh--split"><div><span class="eyebrow up">Technical characteristics</span><h2 class="h2 up">Compare the series.</h2></div><p class="lead up">Values from the Vatayanam brochure, for reference. V-Tech confirms final values with its technical department.</p></div>
@@ -211,6 +211,8 @@ em{font-style:italic}
 .cs__d li:before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:rgba(2,64,154,.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2302409A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/11px no-repeat}
 .cs__d .b{align-self:flex-start}
 @media(max-width:900px){.cs__c{grid-template-columns:1fr}.cs__v{min-height:320px}.cs__meta{min-width:0;width:100%}.cs__tabs{left:10px;right:10px;top:10px}.cs__tabs button{flex:1;padding:9px 4px;font-size:9.5px}}
+.gl__meta{display:flex;align-items:center;gap:22px;min-width:min(360px,100%)}.gl__track{flex:1;height:1px;background:var(--ln);position:relative}.gl__bar{position:absolute;left:0;top:-1px;height:3px;width:12%;background:var(--blue)!important;transition:width .3s linear}
+@media(max-width:700px){.gl__meta{width:100%;gap:14px}}
 /* finishes: expanding panels */
 .fn{padding:clamp(56px,6vw,88px) 0}
 .fn__g{display:flex;gap:clamp(10px,1.2vw,18px);height:clamp(420px,40vw,520px)}
@@ -341,8 +343,6 @@ body{font-size:16px}
 .hero__f{margin-top:-34px;position:relative;z-index:3}
 .f{padding:26px 22px;box-shadow:0 30px 60px -30px rgba(2,52,89,.45);border-top:3px solid var(--blue)}
 .f__h{font-size:30px}
-.f label:has([name=email]),.f label:has([name=qty]),.f label:has([name=colour]){display:none}
-.f__r{grid-template-columns:1fr!important}
 .hero__facts{margin-top:0!important;padding:34px 0 10px;border-top:0!important;grid-template-columns:1fr 1fr!important;gap:0;color:var(--ink)}
 .hero__facts div{padding:16px 0!important;border-left:0!important;border-top:1px solid var(--ln)!important}
 .hero__facts div:nth-child(even){padding-left:18px!important;border-left:1px solid var(--ln)!important}
@@ -390,6 +390,45 @@ body{font-size:16px}
 .mb{padding:10px 12px calc(10px + env(safe-area-inset-bottom))!important;gap:10px;box-shadow:0 -10px 30px -12px rgba(2,52,89,.25)!important}
 .mb .b{min-height:52px}.mb .b--ghost{border-color:var(--blue);color:var(--blue)}
 }
+
+/* series section fits one phone screen, no cut */
+@media(max-width:700px){
+.cs{padding:16px 0 20px!important}
+.cs .eyebrow{display:none}.h__in{min-height:62px!important}.h__logo img{height:34px!important}.h__cta{min-height:40px!important}.cs__hd{margin-bottom:12px!important;gap:10px!important}.cs__hd .h2{font-size:30px!important}.cs__hd .h2:after{display:none}
+.cs__meta{grid-template-columns:auto 1fr auto!important;gap:6px 12px!important}.cs__nm{font-size:19px!important}.cs__a{width:42px!important;height:42px!important;font-size:16px}
+.cs__c{opacity:1!important;transform:none!important;box-shadow:0 20px 40px -28px rgba(2,52,89,.5)}
+.cs__v{min-height:0!important;height:min(26svh,230px)}
+.cs__prod{padding:8% 10% 18%}.cs__draw{padding:6% 4% 18%}
+.cs__tabs{top:auto!important;bottom:8px;left:8px!important;right:8px!important}.cs__tabs button{padding:8px 2px!important;font-size:9px!important;letter-spacing:.1em}
+.cs__d{padding:14px 16px 16px!important}
+.cs__k{font-size:9.5px;margin-bottom:4px;letter-spacing:.16em}
+.cs__d h3{font-size:30px!important;margin-bottom:6px}
+.cs__d p{font-size:13.5px;line-height:1.55;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cs__d ul{grid-template-columns:1fr 1fr;gap:6px 10px;margin-bottom:14px}
+.cs__d li{font-size:12px;line-height:1.35;padding-left:20px}.cs__d li:before{width:14px;height:14px;top:1px;background-size:9px}
+.cs__d li:nth-child(n+5){display:none}
+.cs__d .b{width:100%;min-height:46px;align-self:stretch}
+}
+
+/* ===== form, refined ===== */
+.f{gap:12px!important}.f__ph b{padding:0 10px!important}
+.f__hd{margin-bottom:2px}.f__note{font:400 13px var(--sans);color:var(--mu);margin-top:4px}
+.f label,.f__lb{display:grid;gap:6px;font:500 10.5px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.f input,.f select{min-height:46px!important;padding:0 14px!important;background:#F4F8FC!important;border:1px solid rgba(2,52,89,.12)!important;border-radius:2px!important;font:400 15.5px var(--sans)!important;color:var(--ink)!important;transition:border-color .3s,background .3s,box-shadow .3s}
+.f input::placeholder{color:#8B98A6}
+.f input:focus,.f select:focus{outline:none;background:#fff!important;border-color:var(--blue)!important;box-shadow:0 0 0 3px rgba(2,103,178,.12)}
+.f [aria-invalid=true]{border-color:#C0392B!important;background:#FDF5F4!important}
+.f select{-webkit-appearance:none;appearance:none;padding-right:38px!important;background:#F4F8FC url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230267B2' stroke-width='1.6'/%3E%3C/svg%3E") right 14px center/11px no-repeat!important;cursor:pointer}
+.f__ph{display:flex;align-items:stretch}.f__ph b{display:grid;place-items:center;padding:0 12px;background:#E6EFF7;border:1px solid rgba(2,52,89,.12);border-right:0;font:500 15px var(--sans);color:var(--ink);letter-spacing:0;text-transform:none}
+.f__ph input{flex:1;min-width:0}
+.f__chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.f__chips button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 8px;background:#fff;border:1px solid rgba(2,52,89,.16);font:500 12.5px var(--sans);color:var(--ink);letter-spacing:.02em;text-transform:none;transition:border-color .3s,background .3s,color .3s}
+.f__chips i{width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.f__chips button:hover{border-color:var(--blue)}.f__chips button[aria-pressed=true]{border-color:var(--blue);background:#EAF3FB;color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.f__st{padding:10px 12px;background:#EAF3FB;border-left:3px solid var(--blue);font:500 13px/1.5 var(--sans)!important;color:var(--ink)!important}
+@media(max-width:1100px) and (min-width:981px){.f__chips{grid-template-columns:1fr}}
+@media(max-width:700px){.f__em,.f__qt{display:none!important}.f__r--keep{grid-template-columns:1fr 1fr!important}.f__r:not(.f__r--keep){grid-template-columns:1fr!important}.f__chips button{font-size:12px;gap:6px}}
+@media(max-width:360px){.f__chips{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.up,.img,.fade,.hero__f{opacity:1!important;transform:none!important}.ln>span{transform:none!important}.hero__bg{transform:none}}
 `;
 
@@ -407,6 +446,9 @@ document.querySelectorAll('[data-lead]').forEach(function(f){var st=f.querySelec
  if(n.length<2){f.name.setAttribute('aria-invalid','true');f.name.focus();say('Please enter your name.');return}
  if(!/^[6-9]\\d{9}$/.test(p)){f.phone.setAttribute('aria-invalid','true');f.phone.focus();say('Enter a valid 10-digit mobile number.');return}
  send({name:n,phone:p,last:f.last.value.trim(),email:f.email.value.trim(),product:f.product.value,qty:f.qty.value,colour:f.colour.value,page:location.href},say,f)})});
+
+/* form finish chips */
+document.querySelectorAll('.f__chips').forEach(function(g){var h=g.parentNode.querySelector('input[name=colour]');g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var on=b.getAttribute('aria-pressed')!=='true';g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b&&on)});h.value=on?b.dataset.v:''})});
 document.querySelectorAll('[data-pick]').forEach(function(a){a.addEventListener('click',function(){var s=document.querySelector('#quote select[name=product]');if(s)s.value=a.dataset.pick;track('select_product',{product:a.dataset.pick})})});
 document.querySelectorAll('[data-track]').forEach(function(a){a.addEventListener('click',function(){track('click_'+a.dataset.track)})});
 var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -440,19 +482,20 @@ var x0=null;tr.addEventListener('touchstart',function(e){x0=e.touches[0].clientX
 new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.15}).observe(cs);addEventListener('resize',function(){show(cur)});show(0);play()}
 /* finishes */
 var fc=[].slice.call(document.querySelectorAll('.fn__c'));fc.forEach(function(c){function on(){fc.forEach(function(x){x.classList.toggle('on',x===c)})}function off(){fc.forEach(function(x){x.classList.remove('on')})}c.addEventListener('mouseenter',on);c.addEventListener('mouseleave',off);c.addEventListener('focus',on);c.addEventListener('blur',off)});
-/* gallery track */
-var gt=document.querySelector('.gl__t');if(gt){var gn=document.querySelector('.gl__n'),gnm=document.querySelector('.gl__nm'),gbar=document.querySelector('.gl__bar'),items=[].slice.call(gt.children),GN=items.length,gi=0;
+/* gallery track: arrows + autoplay, progress bar follows the scroll; ends exactly at the last photo */
+var gt=document.querySelector('.gl__t');if(gt){var gbar=document.querySelector('.gl__bar'),items=[].slice.call(gt.children);
 function step(){return items[1].offsetLeft-items[0].offsetLeft}
-var sp=document.createElement('div');sp.setAttribute('aria-hidden','true');sp.style.flex='none';gt.appendChild(sp);function spc(){var pl=parseFloat(getComputedStyle(gt).paddingLeft)||0;sp.style.width=Math.max(0,gt.clientWidth-items[GN-1].offsetWidth-pl*2)+'px'}spc();addEventListener('resize',spc);
-function gupd(i){gi=Math.max(0,Math.min(GN-1,i));gn.textContent=String(gi+1).padStart(2,'0');gnm.textContent=items[gi].querySelector('figcaption b').textContent;gbar.style.width=((gi+1)/GN*100)+'%'}
-document.querySelectorAll('.gl__a').forEach(function(b){b.addEventListener('click',function(){var n=gi+(+b.dataset.d);if(n>=GN)n=0;if(n<0)n=GN-1;gt.scrollTo({left:n*step(),behavior:'smooth'});gupd(n)})});
-gt.addEventListener('scroll',function(){gupd(Math.round(gt.scrollLeft/step()))},{passive:true});
-var gvis=false;new IntersectionObserver(function(es){gvis=es[0].isIntersecting},{threshold:.2}).observe(gt);setInterval(function(){if(!gvis||dn||rm)return;var n=gi+1;if(n>=GN)n=0;gt.scrollTo({left:n*step(),behavior:'smooth'});gupd(n)},3800);
+function gmax(){return gt.scrollWidth-gt.clientWidth}
+function gprog(){var m=gmax();gbar.style.width=(m>0?(12+88*gt.scrollLeft/m):100)+'%'}
+function gmove(d){var m=gmax(),x=gt.scrollLeft;if(d>0&&x>=m-4)gt.scrollTo({left:0,behavior:'smooth'});else if(d<0&&x<=4)gt.scrollTo({left:m,behavior:'smooth'});else gt.scrollBy({left:d*step(),behavior:'smooth'})}
+document.querySelectorAll('.gl__a').forEach(function(b){b.addEventListener('click',function(){gmove(+b.dataset.d)})});
+gt.addEventListener('scroll',gprog,{passive:true});addEventListener('resize',gprog);gprog();
+var gvis=false;new IntersectionObserver(function(es){gvis=es[0].isIntersecting},{threshold:.2}).observe(gt);setInterval(function(){if(gvis&&!dn&&!rm)gmove(1)},3800);
 var dn=false,sx0=0,sl0=0;gt.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;sx0=e.clientX;sl0=gt.scrollLeft;gt.style.scrollSnapType='none';gt.style.cursor='grabbing'});addEventListener('pointermove',function(e){if(dn)gt.scrollLeft=sl0-(e.clientX-sx0)});addEventListener('pointerup',function(){if(!dn)return;dn=false;gt.style.scrollSnapType='';gt.style.cursor=''})}
 /* closing parallax */
 var cb=document.querySelector('.ct__bg');if(cb&&!rm){var tc=0;function pc(){tc=0;var r=cb.parentNode.getBoundingClientRect();cb.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-.15).toFixed(1)+'px')}addEventListener('scroll',function(){if(!tc){tc=1;requestAnimationFrame(pc)}},{passive:true});pc()}
 /* mobile bar */
-var mb=document.querySelector('.mb'),hero=document.querySelector('.hero');if(mb&&hero)new IntersectionObserver(function(es){mb.classList.toggle('on',!es[0].isIntersecting)}).observe(document.getElementById('quote'));
+var mb=document.querySelector('.mb');if(mb){var qv=true,sv=false;function mbu(){mb.classList.toggle('on',!qv&&!sv)}new IntersectionObserver(function(es){qv=es[0].isIntersecting;mbu()}).observe(document.getElementById('quote'));var csx=document.getElementById('series');if(csx)new IntersectionObserver(function(es){sv=es[0].isIntersecting&&es[0].intersectionRatio>.35;mbu()},{threshold:[0,.35,.6,1]}).observe(csx)}
 `;
 
 const LD = [{ '@context': 'https://schema.org', '@type': 'HomeAndConstructionBusiness', name: 'V-Tech Building Systems Pvt. Ltd (Vatayanam)', url: SITE, telephone: ['+919740422863'], email: EMAIL, address: { '@type': 'PostalAddress', streetAddress: 'No. 693, M.N.S. Arcade, Dr. Rajkumar Road, 6th Block, Rajajinagar', addressLocality: 'Bengaluru', addressRegion: 'Karnataka', postalCode: '560010', addressCountry: 'IN' }, image: SITE + A + 'hero-real-2x.webp' },
