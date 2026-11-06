@@ -413,9 +413,10 @@ var fc=[].slice.call(document.querySelectorAll('.fn__c'));fc.forEach(function(c)
 /* gallery track */
 var gt=document.querySelector('.gl__t');if(gt){var gn=document.querySelector('.gl__n'),gnm=document.querySelector('.gl__nm'),gbar=document.querySelector('.gl__bar'),items=[].slice.call(gt.children),GN=items.length,gi=0;
 function step(){return items[1].offsetLeft-items[0].offsetLeft}
+var sp=document.createElement('div');sp.setAttribute('aria-hidden','true');sp.style.flex='none';gt.appendChild(sp);function spc(){var pl=parseFloat(getComputedStyle(gt).paddingLeft)||0;sp.style.width=Math.max(0,gt.clientWidth-items[GN-1].offsetWidth-pl*2)+'px'}spc();addEventListener('resize',spc);
 function gupd(i){gi=Math.max(0,Math.min(GN-1,i));gn.textContent=String(gi+1).padStart(2,'0');gnm.textContent=items[gi].querySelector('figcaption b').textContent;gbar.style.width=((gi+1)/GN*100)+'%'}
 document.querySelectorAll('.gl__a').forEach(function(b){b.addEventListener('click',function(){var n=gi+(+b.dataset.d);if(n>=GN)n=0;if(n<0)n=GN-1;gt.scrollTo({left:n*step(),behavior:'smooth'});gupd(n)})});
-var gtk=0;gt.addEventListener('scroll',function(){if(gtk)return;gtk=1;requestAnimationFrame(function(){gtk=0;var max=gt.scrollWidth-gt.clientWidth,i=gt.scrollLeft>=max-4?GN-1:Math.round(gt.scrollLeft/step());gupd(i)})},{passive:true});
+gt.addEventListener('scroll',function(){gupd(Math.round(gt.scrollLeft/step()))},{passive:true});
 var gvis=false;new IntersectionObserver(function(es){gvis=es[0].isIntersecting},{threshold:.2}).observe(gt);setInterval(function(){if(!gvis||dn||rm)return;var n=gi+1;if(n>=GN)n=0;gt.scrollTo({left:n*step(),behavior:'smooth'});gupd(n)},3800);
 var dn=false,sx0=0,sl0=0;gt.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;sx0=e.clientX;sl0=gt.scrollLeft;gt.style.scrollSnapType='none';gt.style.cursor='grabbing'});addEventListener('pointermove',function(e){if(dn)gt.scrollLeft=sl0-(e.clientX-sx0)});addEventListener('pointerup',function(){if(!dn)return;dn=false;gt.style.scrollSnapType='';gt.style.cursor=''})}
 /* closing parallax */
